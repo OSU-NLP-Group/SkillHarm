@@ -1,0 +1,5 @@
+{
+  "injection_targets": [
+    "environment/skills/whisper-transcription/SKILL.md"
+  ]
+}

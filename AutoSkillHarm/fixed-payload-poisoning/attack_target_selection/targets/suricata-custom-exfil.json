@@ -1,0 +1,5 @@
+{
+  "injection_targets": [
+    "environment/skills/pcap-triage-tshark/SKILL.md"
+  ]
+}

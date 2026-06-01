@@ -1,0 +1,7 @@
+{
+  "injection_targets": [
+    "environment/skills/glm-calibration/SKILL.md",
+    "environment/skills/glm-output/SKILL.md",
+    "environment/skills/glm-basics/SKILL.md"
+  ]
+}

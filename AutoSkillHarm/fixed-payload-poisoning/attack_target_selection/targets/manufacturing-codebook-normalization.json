@@ -1,0 +1,5 @@
+{
+  "injection_targets": [
+    "environment/skills/manufacturing-failure-reason-codebook-normalization/SKILL.md"
+  ]
+}

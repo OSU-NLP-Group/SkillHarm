@@ -1,0 +1,7 @@
+{
+  "injection_targets": [
+    "environment/skills/gamma-phase-associator/SKILL.md",
+    "environment/skills/seisbench-model-api/SKILL.md",
+    "environment/skills/obspy-data-api/SKILL.md"
+  ]
+}

@@ -1,0 +1,6 @@
+{
+  "injection_targets": [
+    "environment/skills/seisbench-model-api/SKILL.md",
+    "environment/skills/seismic-picker-selection/SKILL.md"
+  ]
+}

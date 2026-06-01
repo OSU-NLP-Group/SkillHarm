@@ -1,0 +1,6 @@
+{
+  "injection_targets": [
+    "environment/skills/lab-unit-harmonization/reference/ckd_lab_features.md",
+    "environment/skills/lab-unit-harmonization/SKILL.md"
+  ]
+}

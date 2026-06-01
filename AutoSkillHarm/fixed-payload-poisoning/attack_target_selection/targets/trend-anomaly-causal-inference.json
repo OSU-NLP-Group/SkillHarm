@@ -1,0 +1,10 @@
+{
+  "injection_targets": [
+    "environment/skills/data_cleaning/SKILL.md",
+    "environment/skills/feature_engineering/SKILL.md",
+    "environment/skills/did_causal_analysis/SKILL.md",
+    "environment/skills/did_causal_analysis/scripts/did_analysis.py",
+    "environment/skills/data_cleaning/scripts/data_cleaning.py",
+    "environment/skills/time_series_anomaly_detection/scripts/anomaly_detection.py"
+  ]
+}

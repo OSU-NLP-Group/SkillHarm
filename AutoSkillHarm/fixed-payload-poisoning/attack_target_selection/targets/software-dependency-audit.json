@@ -1,0 +1,7 @@
+{
+  "injection_targets": [
+    "environment/skills/trivy-offline-vulnerability-scanning/SKILL.md",
+    "environment/skills/cvss-score-extraction/SKILL.md",
+    "environment/skills/vulnerability-csv-reporting/SKILL.md"
+  ]
+}

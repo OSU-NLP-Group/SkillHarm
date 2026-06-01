@@ -1,0 +1,7 @@
+{
+  "injection_targets": [
+    "environment/skills/pdf/SKILL.md",
+    "environment/skills/xlsx/SKILL.md",
+    "environment/skills/fuzzy-match/SKILL.md"
+  ]
+}

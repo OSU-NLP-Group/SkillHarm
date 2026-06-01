@@ -1,0 +1,7 @@
+{
+  "injection_targets": [
+    "environment/skills/pcap-analysis/SKILL.md",
+    "environment/skills/threat-detection/SKILL.md",
+    "environment/skills/pcap-analysis/pcap_utils.py"
+  ]
+}

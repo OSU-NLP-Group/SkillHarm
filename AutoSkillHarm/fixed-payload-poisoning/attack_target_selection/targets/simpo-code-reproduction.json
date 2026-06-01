@@ -1,0 +1,6 @@
+{
+  "injection_targets": [
+    "environment/skills/pdf/SKILL.md",
+    "environment/skills/nlp-research-repo-package-installment/SKILL.md"
+  ]
+}

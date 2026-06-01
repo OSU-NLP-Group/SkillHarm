@@ -1,0 +1,7 @@
+{
+  "injection_targets": [
+    "environment/skills/nws-flood-thresholds/SKILL.md",
+    "environment/skills/usgs-data-download/SKILL.md",
+    "environment/skills/flood-detection/SKILL.md"
+  ]
+}

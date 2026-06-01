@@ -1,0 +1,9 @@
+{
+  "injection_targets": [
+    "environment/skills/sqlite-map-parser/SKILL.md",
+    "environment/skills/civ6lib/SKILL.md",
+    "environment/skills/hex-grid-spatial/SKILL.md",
+    "environment/skills/civ6lib/scripts/adjacency_rules.py",
+    "environment/skills/civ6lib/scripts/placement_rules.py"
+  ]
+}

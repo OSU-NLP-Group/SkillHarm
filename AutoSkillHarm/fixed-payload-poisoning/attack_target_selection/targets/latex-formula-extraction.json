@@ -1,0 +1,7 @@
+{
+  "injection_targets": [
+    "environment/skills/marker/SKILL.md",
+    "environment/skills/pdf/SKILL.md",
+    "environment/skills/marker/scripts/marker_to_markdown.py"
+  ]
+}

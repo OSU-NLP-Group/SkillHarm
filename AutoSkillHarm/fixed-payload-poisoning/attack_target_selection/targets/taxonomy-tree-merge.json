@@ -1,0 +1,7 @@
+{
+  "injection_targets": [
+    "environment/skills/hierarchical-taxonomy-clustering/SKILL.md",
+    "environment/skills/hierarchical-taxonomy-clustering/scripts/pipeline.py",
+    "environment/skills/hierarchical-taxonomy-clustering/scripts/step2_weighted_embedding_generation.py"
+  ]
+}

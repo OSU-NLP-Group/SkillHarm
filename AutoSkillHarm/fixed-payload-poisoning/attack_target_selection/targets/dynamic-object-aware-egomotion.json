@@ -1,0 +1,7 @@
+{
+  "injection_targets": [
+    "environment/skills/dyn-object-masks/SKILL.md",
+    "environment/skills/egomotion-estimation/SKILL.md",
+    "environment/skills/sampling-and-indexing/SKILL.md"
+  ]
+}

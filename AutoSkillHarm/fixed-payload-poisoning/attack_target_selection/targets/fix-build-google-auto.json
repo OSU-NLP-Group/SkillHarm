@@ -1,0 +1,7 @@
+{
+  "injection_targets": [
+    "environment/skills/maven-build-lifecycle/SKILL.md",
+    "environment/skills/maven-dependency-management/SKILL.md",
+    "environment/skills/maven-plugin-configuration/SKILL.md"
+  ]
+}

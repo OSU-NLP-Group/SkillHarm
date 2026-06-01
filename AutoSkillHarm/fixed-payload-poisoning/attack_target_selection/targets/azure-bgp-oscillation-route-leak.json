@@ -1,0 +1,5 @@
+{
+  "injection_targets": [
+    "environment/skills/azure-bgp/SKILL.md"
+  ]
+}

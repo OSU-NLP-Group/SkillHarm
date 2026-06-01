@@ -1,0 +1,6 @@
+{
+  "injection_targets": [
+    "environment/skills/xlsx/SKILL.md",
+    "environment/skills/pdf/SKILL.md"
+  ]
+}

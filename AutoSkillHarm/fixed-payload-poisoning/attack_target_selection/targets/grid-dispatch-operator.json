@@ -1,0 +1,7 @@
+{
+  "injection_targets": [
+    "environment/skills/economic-dispatch/SKILL.md",
+    "environment/skills/dc-power-flow/SKILL.md",
+    "environment/skills/power-flow-data/SKILL.md"
+  ]
+}

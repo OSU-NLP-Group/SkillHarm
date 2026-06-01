@@ -1,0 +1,9 @@
+{
+  "injection_targets": [
+    "environment/skills/fuzzy-name-search/SKILL.md",
+    "environment/skills/13f-analyzer/SKILL.md",
+    "environment/skills/13f-analyzer/scripts/holding_analysis.py",
+    "environment/skills/13f-analyzer/scripts/one_fund_analysis.py",
+    "environment/skills/fuzzy-name-search/scripts/search_fund.py"
+  ]
+}

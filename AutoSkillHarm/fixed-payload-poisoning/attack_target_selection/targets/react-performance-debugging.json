@@ -1,0 +1,6 @@
+{
+  "injection_targets": [
+    "environment/skills/react-best-practices/SKILL.md",
+    "environment/skills/react-best-practices/AGENTS.md"
+  ]
+}

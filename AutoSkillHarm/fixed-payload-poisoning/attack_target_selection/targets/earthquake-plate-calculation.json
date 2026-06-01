@@ -1,0 +1,5 @@
+{
+  "injection_targets": [
+    "environment/skills/geospatial-analysis/SKILL.md"
+  ]
+}

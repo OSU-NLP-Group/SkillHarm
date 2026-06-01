@@ -1,0 +1,8 @@
+{
+  "injection_targets": [
+    "environment/skills/ac-branch-pi-model/SKILL.md",
+    "environment/skills/casadi-ipopt-nlp/SKILL.md",
+    "environment/skills/power-flow-data/SKILL.md",
+    "environment/skills/ac-branch-pi-model/scripts/branch_flows.py"
+  ]
+}

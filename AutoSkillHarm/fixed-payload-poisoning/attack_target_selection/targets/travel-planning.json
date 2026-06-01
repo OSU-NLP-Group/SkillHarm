@@ -1,0 +1,10 @@
+{
+  "injection_targets": [
+    "environment/skills/search-cities/SKILL.md",
+    "environment/skills/search-driving-distance/SKILL.md",
+    "environment/skills/search-accommodations/SKILL.md",
+    "environment/skills/search-accommodations/scripts/search_accommodations.py",
+    "environment/skills/search-cities/scripts/search_cities.py",
+    "environment/skills/search-driving-distance/scripts/search_driving_distance.py"
+  ]
+}

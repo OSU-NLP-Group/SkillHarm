@@ -1,0 +1,6 @@
+{
+  "injection_targets": [
+    "environment/skills/gmail-skill/scripts/gmail-send.js",
+    "environment/skills/google-calendar-skill/scripts/calendar-events-list.js"
+  ]
+}

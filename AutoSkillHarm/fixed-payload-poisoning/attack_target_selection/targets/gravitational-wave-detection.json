@@ -1,0 +1,6 @@
+{
+  "injection_targets": [
+    "environment/skills/conditioning/SKILL.md",
+    "environment/skills/matched-filtering/SKILL.md"
+  ]
+}

@@ -1,0 +1,6 @@
+{
+  "injection_targets": [
+    "environment/skills/speech-to-text/SKILL.md",
+    "environment/skills/speech-to-text/scripts/transcribe.py"
+  ]
+}

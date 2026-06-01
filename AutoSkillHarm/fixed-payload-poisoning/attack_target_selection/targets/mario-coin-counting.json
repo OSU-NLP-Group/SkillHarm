@@ -1,0 +1,8 @@
+{
+  "injection_targets": [
+    "environment/skills/ffmpeg/SKILL.md",
+    "environment/skills/object_counter/SKILL.md",
+    "environment/skills/image_editing/SKILL.md",
+    "environment/skills/object_counter/scripts/count_objects.py"
+  ]
+}

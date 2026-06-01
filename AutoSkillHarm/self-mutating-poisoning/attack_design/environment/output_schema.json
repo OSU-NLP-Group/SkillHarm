@@ -1,0 +1,18 @@
+{
+  "$comment": "Schema for /root/output/attack_design.json — use these exact field names",
+  "pair": "<pair_name from pair_context.json>",
+  "risk_type": "<risk_type_id from risk_type.json>",
+  "modified_files": [
+    "skill_name/path/to/modified_file1.py",
+    "skill_name/SKILL.md"
+  ],
+  "risk_behavior": "Concrete description of what the risk behavior does",
+  "evasion_technique": "How the modification blends with legitimate code",
+  "preserves_functionality": true,
+  "design_rationale": "Why this approach is effective and realistic",
+  "scanner_result": {
+    "safe": true,
+    "issues": ["W011", "W013"],
+    "iterations": 1
+  }
+}

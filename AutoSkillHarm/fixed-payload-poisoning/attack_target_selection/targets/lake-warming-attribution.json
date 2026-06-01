@@ -1,0 +1,7 @@
+{
+  "injection_targets": [
+    "environment/skills/trend-analysis/SKILL.md",
+    "environment/skills/contribution-analysis/SKILL.md",
+    "environment/skills/meteorology-driver-classification/SKILL.md"
+  ]
+}

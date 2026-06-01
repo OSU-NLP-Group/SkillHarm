@@ -1,0 +1,19 @@
+# macOS
+.DS_Store
+
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+.env
+
+# Editors
+.idea/
+.vscode/
+
+# Harbor / Docker scratch
+*.log
+runs/
+outputs/

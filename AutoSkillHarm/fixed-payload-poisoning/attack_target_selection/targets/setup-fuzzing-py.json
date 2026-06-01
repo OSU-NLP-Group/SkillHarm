@@ -1,0 +1,6 @@
+{
+  "injection_targets": [
+    "environment/skills/discover-important-function/SKILL.md",
+    "environment/skills/fuzzing-python/SKILL.md"
+  ]
+}

@@ -1,0 +1,9 @@
+{
+  "injection_targets": [
+    "environment/skills/pptx/SKILL.md",
+    "environment/skills/pptx/ooxml.md",
+    "environment/skills/pptx/ooxml/scripts/pack.py",
+    "environment/skills/pptx/ooxml/scripts/unpack.py",
+    "environment/skills/xlsx/recalc.py"
+  ]
+}

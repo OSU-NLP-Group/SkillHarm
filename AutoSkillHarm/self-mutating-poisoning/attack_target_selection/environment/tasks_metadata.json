@@ -1,0 +1,3446 @@
+{
+  "total_tasks": 87,
+  "tasks": {
+    "3d-scan-calc": {
+      "difficulty": "hard",
+      "category": "engineering",
+      "instruction_preview": "You need to calculate the mass of a 3D printed part. The input (`/root/scan_data.stl`) is a binary STL, but the 2-byte \"Attribute Byte Count\" at the end of each triangle record is being used to store the **Material ID** of the object.\n\nYou need to:\n1. Parse the binary STL and identify the **largest connected component** by filtering out any scanning debris.\n2. Extract the Material ID and reference it with `/root/material_density_table.md` to find the corresponding density.\n3. Calculate the mass ",
+      "skills": {
+        "mesh-analysis": {
+          "has_skill_md": true,
+          "scripts": [
+            "scripts\\mesh_tool.py"
+          ],
+          "references": [],
+          "other_files": []
+        }
+      },
+      "skill_names": [
+        "mesh-analysis"
+      ],
+      "total_scripts": 1
+    },
+    "adaptive-cruise-control": {
+      "difficulty": "medium",
+      "category": "control-systems",
+      "instruction_preview": "You need to implement an Adaptive Cruise Control (ACC) simulation that maintains the set speed (30m/s) when no vehicles are detected ahead, and automatically adjusts speed to maintain a safe following distance when a vehicle is detected ahead. The targets are: speed rise time <10s, speed overshoot <5%, speed steady-state error <0.5 m/s, distance steady-state error <2m, minimum distance >5m, control duration 150s. Also consider the constraints: initial speed ~0 m/s, acceleration limits [-8.0, 3.0",
+      "skills": {
+        "csv-processing": {
+          "has_skill_md": true,
+          "scripts": [],
+          "references": [],
+          "other_files": []
+        },
+        "pid-controller": {
+          "has_skill_md": true,
+          "scripts": [],
+          "references": [],
+          "other_files": []
+        },
+        "simulation-metrics": {
+          "has_skill_md": true,
+          "scripts": [],
+          "references": [],
+          "other_files": []
+        },
+        "vehicle-dynamics": {
+          "has_skill_md": true,
+          "scripts": [],
+          "references": [],
+          "other_files": []
+        },
+        "yaml-config": {
+          "has_skill_md": true,
+          "scripts": [],
+          "references": [],
+          "other_files": []
+        }
+      },
+      "skill_names": [
+        "csv-processing",
+        "pid-controller",
+        "simulation-metrics",
+        "vehicle-dynamics",
+        "yaml-config"
+      ],
+      "total_scripts": 0
+    },
+    "azure-bgp-oscillation-route-leak": {
+      "difficulty": "medium",
+      "category": "bgp-route",
+      "instruction_preview": "Detect BGP route oscillation and leaks in an Azure Virtual WAN network topology and evaluate which solutions can fix them.\n\nInput explanations:\n- route.json: the route advertised from vnet\n- preferences.json: routing preferences between hubs\n- local_pref.json: relationship type weight\n\nSteps:\n1. Load input files in `/app/data/`\n2. Detect in the topology: oscillation and/or route leak event violating BGP valley-free routing\n3. When oscillation or route leaks are detected, evaluate the possible so",
+      "skills": {
+        "azure-bgp": {
+          "has_skill_md": true,
+          "scripts": [],
+          "references": [],
+          "other_files": []
+        }
+      },
+      "skill_names": [
+        "azure-bgp"
+      ],
+      "total_scripts": 0
+    },
+    "citation-check": {
+      "difficulty": "medium",
+      "category": "research",
+      "instruction_preview": "You are helping a research team verify the integrity of their bibliography before submitting a paper. The team suspects that some citations in their BibTeX file may be fake or hallucinated.\n\nThe BibTeX file is located at `/root/test.bib` and contains a mix of real and potentially fake academic citations. Your task is to identify which citations are fake or hallucinated.\n\nWrite your findings to `/root/answer.json` in the following format:\n\n```json\n{\n  \"fake_citations\": [\n    \"Title of first fake ",
+      "skills": {
+        "citation-management": {
+          "has_skill_md": true,
+          "scripts": [
+            "scripts\\doi_to_bibtex.py",
+            "scripts\\extract_metadata.py",
+            "scripts\\format_bibtex.py",
+            "scripts\\search_google_scholar.py",
+            "scripts\\search_pubmed.py",
+            "scripts\\validate_citations.py"
+          ],
+          "references": [
+            "references\\bibtex_formatting.md",
+            "references\\citation_validation.md",
+            "references\\google_scholar_search.md",
+            "references\\metadata_extraction.md",
+            "references\\pubmed_search.md"
+          ],
+          "other_files": [
+            "assets\\bibtex_template.bib",
+            "assets\\citation_checklist.md"
+          ]
+        }
+      },
+      "skill_names": [
+        "citation-management"
+      ],
+      "total_scripts": 6
+    },
+    "civ6-adjacency-optimizer": {
+      "difficulty": "hard",
+      "category": "games",
+      "instruction_preview": "# Sid Meier's Civilization 6 District Adjacency Bonus Optimizer\n\n## Task\n\nImagining you are acting as an optimizer for adjacency bonus in Sid Meier's Civilization 6.\nGiven a map scenario, place city center(s) and districts to maximize total adjacency bonuses.\nYou are responsible of understanding the spatial relationships of tiles on the map. Deciding which and how many districts you can place.\nAt the end, come up with placement solution that achieves the highest adjacency bonus and accurately ca",
+      "skills": {
+        "civ6lib": {
+          "has_skill_md": true,
+          "scripts": [
+            "scripts\\adjacency_rules.py",
+            "scripts\\hex_utils.py",
+            "scripts\\placement_rules.py"
+          ],
+          "references": [],
+          "other_files": []
+        },
+        "hex-grid-spatial": {
+          "has_skill_md": true,
+          "scripts": [
+            "scripts\\hex_utils.py"
+          ],
+          "references": [],
+          "other_files": []
+        },
+        "map-optimization-strategy": {
+          "has_skill_md": true,
+          "scripts": [],
+          "references": [],
+          "other_files": []
+        },
+        "sqlite-map-parser": {
+          "has_skill_md": true,
+          "scripts": [],
+          "references": [],
+          "other_files": []
+        }
+      },
+      "skill_names": [
+        "civ6lib",
+        "hex-grid-spatial",
+        "map-optimization-strategy",
+        "sqlite-map-parser"
+      ],
+      "total_scripts": 4
+    },
+    "court-form-filling": {
+      "difficulty": "easy",
+      "category": "document-processing",
+      "instruction_preview": "Fill the California Small Claims Court form at `/root/sc100-blank.pdf` based on the case description below, and save the filled one to `/root/sc100-filled.pdf`. Only fill in the necessary fields and leave the court-filled, optional fields or fields not mentioned in the case description below empty. Use this date format: xxxx-xx-xx.\n\n\nCase Description: I am Joyce He. It's my first time suing by small claims. I live in 655 S Fair Oaks Ave, Sunnyvale, CA 94086, my phone # is 4125886066, email: he19",
+      "skills": {
+        "pdf": {
+          "has_skill_md": true,
+          "scripts": [
+            "scripts\\check_bounding_boxes.py",
+            "scripts\\check_bounding_boxes_test.py",
+            "scripts\\check_fillable_fields.py",
+            "scripts\\convert_pdf_to_images.py",
+            "scripts\\create_validation_image.py",
+            "scripts\\extract_form_field_info.py",
+            "scripts\\fill_fillable_fields.py",
+            "scripts\\fill_pdf_form_with_annotations.py"
+          ],
+          "references": [],
+          "other_files": [
+            "forms.md",
+            "LICENSE.txt",
+            "reference.md"
+          ]
+        }
+      },
+      "skill_names": [
+        "pdf"
+      ],
+      "total_scripts": 8
+    },
+    "crystallographic-wyckoff-position-analysis": {
+      "difficulty": "medium",
+      "category": "materials_science",
+      "instruction_preview": "You are a materials science researcher. You want to analyze the crystal structure of a few samples. You are given a few CIF files generated by SHELX through X-ray Diffraction.\n\nTo process the given CIF file data in batches, you are required to build a function in python to analyze Wyckoff position multiplicities and calculate approximate coordinates for the first atom of each Wyckoff position.\n\nThe entry function should look like:\n```\n    def analyze_wyckoff_position_multiplicities_and_coordinat",
+      "skills": {
+        "pymatgen": {
+          "has_skill_md": true,
+          "scripts": [
+            "scripts\\phase_diagram_generator.py",
+            "scripts\\structure_analyzer.py",
+            "scripts\\structure_converter.py"
+          ],
+          "references": [
+            "references\\analysis_modules.md",
+            "references\\core_classes.md",
+            "references\\io_formats.md",
+            "references\\materials_project_api.md",
+            "references\\transformations_workflows.md"
+          ],
+          "other_files": []
+        },
+        "sympy": {
+          "has_skill_md": true,
+          "scripts": [],
+          "references": [
+            "references\\advanced-topics.md",
+            "references\\code-generation-printing.md",
+            "references\\core-capabilities.md",
+            "references\\matrices-linear-algebra.md",
+            "references\\physics-mechanics.md"
+          ],
+          "other_files": []
+        }
+      },
+      "skill_names": [
+        "pymatgen",
+        "sympy"
+      ],
+      "total_scripts": 3
+    },
+    "dapt-intrusion-detection": {
+      "difficulty": "hard",
+      "category": "security",
+      "instruction_preview": "You\u2019re given `packets.pcap` (subset of DAPT2020 traffic). Compute the stats and fill in only the `value` column in `/root/network_stats.csv`. Lines starting with `#` are comments\u2014leave them.\n\nProtocol counts\n- `protocol_tcp`, `protocol_udp`, `protocol_icmp`, `protocol_arp`: packet counts by protocol\n- `protocol_ip_total`: packets that contain an IP layer\n\nTime / rate\n- `duration_seconds`: last_timestamp \u2212 first_timestamp (seconds)\n- `packets_per_minute_avg/max/min`: count packets per 60s bucket ",
+      "skills": {
+        "pcap-analysis": {
+          "has_skill_md": true,
+          "scripts": [],
+          "references": [],
+          "other_files": [
+            "pcap_utils.py"
+          ]
+        },
+        "threat-detection": {
+          "has_skill_md": true,
+          "scripts": [],
+          "references": [],
+          "other_files": []
+        }
+      },
+      "skill_names": [
+        "pcap-analysis",
+        "threat-detection"
+      ],
+      "total_scripts": 0
+    },
+    "data-to-d3": {
+      "difficulty": "medium",
+      "category": "Data Visualization",
+      "instruction_preview": "Please use D3.js (v6) to visualize input data stored at `/root/data/stock-descriptions.csv` and `/root/data/indiv-stock/` for company stock details and individual stock price histories.\nPlease return the output as a single-page web app at `/root/output/index.html`. I should be able to open it in a web browser.\nAlso make sure to generate files organized in the paths below to support this web app:\n- `/root/output/js/d3.v6.min.js`\n- `/root/output/js/visualization.js`\n- `/root/output/css/style.css`\n",
+      "skills": {
+        "d3-visualization": {
+          "has_skill_md": true,
+          "scripts": [
+            "scripts\\bubble_chart_example.js",
+            "scripts\\check_tooltip.js",
+            "scripts\\interactive_table_example.js",
+            "scripts\\tooltip_handler.js"
+          ],
+          "references": [],
+          "other_files": []
+        }
+      },
+      "skill_names": [
+        "d3-visualization"
+      ],
+      "total_scripts": 4
+    },
+    "dialogue-parser": {
+      "difficulty": "easy",
+      "category": "game",
+      "instruction_preview": "You will implement a dialogue parser that converts a given text file into a structured JSON graph. You will be given a text file `/app/script.txt`, and output a validated JSON graph `/app/dialogue.json` and visualization `/app/dialogue.dot`. You should implement a function `def parse_script(text: str)` in your parser `solution.py` that takes the script content as input and returns the parsed graph (as a dictionary or object with nodes/edges). This is required for validation. Your parser should p",
+      "skills": {
+        "dialogue_graph": {
+          "has_skill_md": true,
+          "scripts": [
+            "scripts\\dialogue_graph.py"
+          ],
+          "references": [],
+          "other_files": []
+        }
+      },
+      "skill_names": [
+        "dialogue_graph"
+      ],
+      "total_scripts": 1
+    },
+    "dynamic-object-aware-egomotion": {
+      "difficulty": "medium",
+      "category": "video-analysis",
+      "instruction_preview": "Given a video file /root/input.mp4, help me to analyze the camera motion (egomotion) and detect dynamic objects in this video. You need to give me 2 files: \n1. A json file named /root/pred_instructions.json, it should record the mapping frame intervals to motion labels (valid labels: Stay, Dolly In, Dolly Out, Pan Left, Pan Right, Tilt Up, Tilt Down, Roll Left, Roll Right). The format is \n{\n  \"0->1\": [\n    \"Pan Right\"\n  ],\n  ...\n}\nin json file 0 stands for the start sample index, and 1 is the en",
+      "skills": {
+        "dyn-object-masks": {
+          "has_skill_md": true,
+          "scripts": [],
+          "references": [],
+          "other_files": []
+        },
+        "egomotion-estimation": {
+          "has_skill_md": true,
+          "scripts": [],
+          "references": [],
+          "other_files": []
+        },
+        "output-validation": {
+          "has_skill_md": true,
+          "scripts": [],
+          "references": [],
+          "other_files": []
+        },
+        "sampling-and-indexing": {
+          "has_skill_md": true,
+          "scripts": [],
+          "references": [],
+          "other_files": []
+        }
+      },
+      "skill_names": [
+        "dyn-object-masks",
+        "egomotion-estimation",
+        "output-validation",
+        "sampling-and-indexing"
+      ],
+      "total_scripts": 0
+    },
+    "earthquake-phase-association": {
+      "difficulty": "hard",
+      "category": "seismology",
+      "instruction_preview": "You have some earthquake traces stored at `/root/data/wave.mseed`, and station information stored at `/root/data/stations.csv`.\n\nYour task is seismic phase association i.e. grouping waveforms recorded at different measuring stations to identify earthquake events.\n\nThe waveform data is in standard MSEED format.\n\nEach row of the station data represents ONE channel of a measuring station, and has the following columns:\n1. `network`, `station`: ID of the network and the measuring station\n2. `channel",
+      "skills": {
+        "gamma-phase-associator": {
+          "has_skill_md": true,
+          "scripts": [],
+          "references": [],
+          "other_files": []
+        },
+        "licenses": {
+          "has_skill_md": false,
+          "scripts": [],
+          "references": [],
+          "other_files": [
+            "obspy.LICENSE",
+            "seisbench.LICENSE"
+          ]
+        },
+        "obspy-data-api": {
+          "has_skill_md": true,
+          "scripts": [],
+          "references": [],
+          "other_files": []
+        },
+        "seisbench-model-api": {
+          "has_skill_md": true,
+          "scripts": [],
+          "references": [],
+          "other_files": []
+        },
+        "seismic-picker-selection": {
+          "has_skill_md": true,
+          "scripts": [],
+          "references": [],
+          "other_files": []
+        }
+      },
+      "skill_names": [
+        "gamma-phase-associator",
+        "licenses",
+        "obspy-data-api",
+        "seisbench-model-api",
+        "seismic-picker-selection"
+      ],
+      "total_scripts": 0
+    },
+    "earthquake-plate-calculation": {
+      "difficulty": "medium",
+      "category": "geophysics",
+      "instruction_preview": "You are a geospatial analyst with expertise in plate tectonics and earthquake analysis. I want to find the earthquake that occurred furthest from the Pacific plate boundary within the Pacific plate itself. Use GeoPandas projections. Output the result to `/root/answer.json` as a JSON file with the following fields:\n\n- `id`: The earthquake ID\n- `place`: The earthquake location description\n- `time`: The earthquake time in ISO 8601 format (YYYY-MM-DDTHH:MM:SSZ)\n- `magnitude`: The earthquake magnitud",
+      "skills": {
+        "geospatial-analysis": {
+          "has_skill_md": true,
+          "scripts": [],
+          "references": [],
+          "other_files": []
+        }
+      },
+      "skill_names": [
+        "geospatial-analysis"
+      ],
+      "total_scripts": 0
+    },
+    "econ-detrending-correlation": {
+      "difficulty": "medium",
+      "category": "economics",
+      "instruction_preview": "In macroeconomics, understanding business cycle dynamics requires separating the trend component (long-term growth) from the cyclical component (short-term fluctuations) of economic time series. This task involves applying standard detrending techniques to analyze how consumption and investment move together over the business cycle.\n\nGoal: Calculate the Pearson correlation coefficient between the detrended real personal consumption expenditures (PCE) and the detrended real private fixed investme",
+      "skills": {
+        "timeseries-detrending": {
+          "has_skill_md": true,
+          "scripts": [],
+          "references": [],
+          "other_files": []
+        }
+      },
+      "skill_names": [
+        "timeseries-detrending"
+      ],
+      "total_scripts": 0
+    },
+    "energy-ac-optimal-power-flow": {
+      "difficulty": "medium",
+      "category": "energy",
+      "instruction_preview": "As an operator-planner in an Independent System Operator, you create a base case for tomorrow's peak hour each morning in order to establish the voltage profile and verify that the day-ahead market schedule is AC-feasible. In order to do this, you should use the model described in `math-model.md` to find a least-cost, AC feasible operating point and then produce a report in `report.json`. The report should follow the structure below with all power values in MW or MVAr, angles in degrees, voltage",
+      "skills": {
+        "ac-branch-pi-model": {
+          "has_skill_md": true,
+          "scripts": [
+            "scripts\\branch_flows.py"
+          ],
+          "references": [],
+          "other_files": []
+        },
+        "casadi-ipopt-nlp": {
+          "has_skill_md": true,
+          "scripts": [],
+          "references": [],
+          "other_files": []
+        },
+        "power-flow-data": {
+          "has_skill_md": true,
+          "scripts": [],
+          "references": [],
+          "other_files": []
+        }
+      },
+      "skill_names": [
+        "ac-branch-pi-model",
+        "casadi-ipopt-nlp",
+        "power-flow-data"
+      ],
+      "total_scripts": 1
+    },
+    "energy-market-pricing": {
+      "difficulty": "hard",
+      "category": "energy",
+      "instruction_preview": "You\u2019re a market analyst at a regional transmission organization. The system managers have noticed that there was a peculiar price increase at multiple buses in yesterday\u2019s day-ahead market. They suspect that one transmission constraint is causing the congestion problem and would like you to carry out a precise \u201cwhat if we relax it?\u201d analysis.\nYou are instructed to run market clearing twice, comparing the results of the base scenario solution and the counterfactual scenario solution. In the count",
+      "skills": {
+        "dc-power-flow": {
+          "has_skill_md": true,
+          "scripts": [
+            "scripts\\build_b_matrix.py"
+          ],
+          "references": [],
+          "other_files": []
+        },
+        "economic-dispatch": {
+          "has_skill_md": true,
+          "scripts": [],
+          "references": [
+            "references\\cost-functions.md"
+          ],
+          "other_files": []
+        },
+        "locational-marginal-prices": {
+          "has_skill_md": true,
+          "scripts": [],
+          "references": [],
+          "other_files": []
+        },
+        "power-flow-data": {
+          "has_skill_md": true,
+          "scripts": [],
+          "references": [],
+          "other_files": []
+        }
+      },
+      "skill_names": [
+        "dc-power-flow",
+        "economic-dispatch",
+        "locational-marginal-prices",
+        "power-flow-data"
+      ],
+      "total_scripts": 1
+    },
+    "enterprise-information-search": {
+      "difficulty": "hard",
+      "category": "enterprise-search",
+      "instruction_preview": "I want you to help me retrieve information over enterprise data.\n\nThe data file is located at /root/DATA. \nThe retrieval question is located at /root/question.txt which includes the key and value of all questions.\n\nWrite your answer of all questions to '/root/answer.json' in a dict format so I can read it by python code directly.\nIf answer include multiple names/items/ids, store them in list.\nIf the answer only include one name/item/id, also store them in a list with length 1.\nAfter finishing al",
+      "skills": {
+        "enterprise-artifact-search": {
+          "has_skill_md": true,
+          "scripts": [],
+          "references": [],
+          "other_files": []
+        }
+      },
+      "skill_names": [
+        "enterprise-artifact-search"
+      ],
+      "total_scripts": 0
+    },
+    "exceltable-in-ppt": {
+      "difficulty": "medium",
+      "category": "Office Operation",
+      "instruction_preview": "You are working on a pptx file `/root/input.pptx` for financial reporting. The file contains an embedded Excel table of currency rates, where each value corresponds to the exchange rate from the row currency to the column currency and some cells contain formulas. There is a text box next to the table that provides an updated exchange rate for one currency pair.\n\nYou need to:\n1. Extract the embedded Excel table and read the contents\n2. Read the text box next to the Excel table to get the updated ",
+      "skills": {
+        "pptx": {
+          "has_skill_md": true,
+          "scripts": [
+            "ooxml\\scripts\\pack.py",
+            "ooxml\\scripts\\unpack.py",
+            "ooxml\\scripts\\validate.py",
+            "ooxml\\scripts\\validation\\base.py",
+            "ooxml\\scripts\\validation\\docx.py",
+            "ooxml\\scripts\\validation\\pptx.py",
+            "ooxml\\scripts\\validation\\redlining.py",
+            "ooxml\\scripts\\validation\\__init__.py",
+            "scripts\\html2pptx.js",
+            "scripts\\inventory.py",
+            "scripts\\rearrange.py",
+            "scripts\\replace.py",
+            "scripts\\thumbnail.py"
+          ],
+          "references": [],
+          "other_files": [
+            "html2pptx.md",
+            "LICENSE.txt",
+            "ooxml.md",
+            "ooxml\\schemas\\ecma\\fouth-edition\\opc-contentTypes.xsd",
+            "ooxml\\schemas\\ecma\\fouth-edition\\opc-coreProperties.xsd",
+            "ooxml\\schemas\\ecma\\fouth-edition\\opc-digSig.xsd",
+            "ooxml\\schemas\\ecma\\fouth-edition\\opc-relationships.xsd",
+            "ooxml\\schemas\\ISO-IEC29500-4_2016\\dml-chart.xsd",
+            "ooxml\\schemas\\ISO-IEC29500-4_2016\\dml-chartDrawing.xsd",
+            "ooxml\\schemas\\ISO-IEC29500-4_2016\\dml-diagram.xsd",
+            "ooxml\\schemas\\ISO-IEC29500-4_2016\\dml-lockedCanvas.xsd",
+            "ooxml\\schemas\\ISO-IEC29500-4_2016\\dml-main.xsd",
+            "ooxml\\schemas\\ISO-IEC29500-4_2016\\dml-picture.xsd",
+            "ooxml\\schemas\\ISO-IEC29500-4_2016\\dml-spreadsheetDrawing.xsd",
+            "ooxml\\schemas\\ISO-IEC29500-4_2016\\dml-wordprocessingDrawing.xsd",
+            "ooxml\\schemas\\ISO-IEC29500-4_2016\\pml.xsd",
+            "ooxml\\schemas\\ISO-IEC29500-4_2016\\shared-additionalCharacteristics.xsd",
+            "ooxml\\schemas\\ISO-IEC29500-4_2016\\shared-bibliography.xsd",
+            "ooxml\\schemas\\ISO-IEC29500-4_2016\\shared-commonSimpleTypes.xsd",
+            "ooxml\\schemas\\ISO-IEC29500-4_2016\\shared-customXmlDataProperties.xsd",
+            "ooxml\\schemas\\ISO-IEC29500-4_2016\\shared-customXmlSchemaProperties.xsd",
+            "ooxml\\schemas\\ISO-IEC29500-4_2016\\shared-documentPropertiesCustom.xsd",
+            "ooxml\\schemas\\ISO-IEC29500-4_2016\\shared-documentPropertiesExtended.xsd",
+            "ooxml\\schemas\\ISO-IEC29500-4_2016\\shared-documentPropertiesVariantTypes.xsd",
+            "ooxml\\schemas\\ISO-IEC29500-4_2016\\shared-math.xsd",
+            "ooxml\\schemas\\ISO-IEC29500-4_2016\\shared-relationshipReference.xsd",
+            "ooxml\\schemas\\ISO-IEC29500-4_2016\\sml.xsd",
+            "ooxml\\schemas\\ISO-IEC29500-4_2016\\vml-main.xsd",
+            "ooxml\\schemas\\ISO-IEC29500-4_2016\\vml-officeDrawing.xsd",
+            "ooxml\\schemas\\ISO-IEC29500-4_2016\\vml-presentationDrawing.xsd",
+            "ooxml\\schemas\\ISO-IEC29500-4_2016\\vml-spreadsheetDrawing.xsd",
+            "ooxml\\schemas\\ISO-IEC29500-4_2016\\vml-wordprocessingDrawing.xsd",
+            "ooxml\\schemas\\ISO-IEC29500-4_2016\\wml.xsd",
+            "ooxml\\schemas\\ISO-IEC29500-4_2016\\xml.xsd",
+            "ooxml\\schemas\\mce\\mc.xsd",
+            "ooxml\\schemas\\microsoft\\wml-2010.xsd",
+            "ooxml\\schemas\\microsoft\\wml-2012.xsd",
+            "ooxml\\schemas\\microsoft\\wml-2018.xsd",
+            "ooxml\\schemas\\microsoft\\wml-cex-2018.xsd",
+            "ooxml\\schemas\\microsoft\\wml-cid-2016.xsd",
+            "ooxml\\schemas\\microsoft\\wml-sdtdatahash-2020.xsd",
+            "ooxml\\schemas\\microsoft\\wml-symex-2015.xsd"
+          ]
+        },
+        "xlsx": {
+          "has_skill_md": true,
+          "scripts": [],
+          "references": [],
+          "other_files": [
+            "LICENSE.txt",
+            "recalc.py"
+          ]
+        }
+      },
+      "skill_names": [
+        "pptx",
+        "xlsx"
+      ],
+      "total_scripts": 13
+    },
+    "exoplanet-detection-period": {
+      "difficulty": "medium",
+      "category": "astronomy",
+      "instruction_preview": "You are provided with a lightcurve obtained with the TESS space telescope at `/root/data/tess_lc.txt`, with the columns: Time (MJD), Normalized flux, Quality flag (0 means good data), Flux uncertainty.\n\nThe lightcurve exhibits strong oscillations in brightness over time associated with stellar activity (e.g. rotational modulation with starspots), which is hiding a exoplanet signal. Find the period of the exoplanet with the following steps:\n\n1. Filter the data (quality flags, outliers etc.)\n2. Re",
+      "skills": {
+        "box-least-squares": {
+          "has_skill_md": true,
+          "scripts": [],
+          "references": [],
+          "other_files": []
+        },
+        "exoplanet-workflows": {
+          "has_skill_md": true,
+          "scripts": [],
+          "references": [],
+          "other_files": []
+        },
+        "light-curve-preprocessing": {
+          "has_skill_md": true,
+          "scripts": [],
+          "references": [],
+          "other_files": []
+        },
+        "lomb-scargle-periodogram": {
+          "has_skill_md": true,
+          "scripts": [],
+          "references": [],
+          "other_files": []
+        },
+        "transit-least-squares": {
+          "has_skill_md": true,
+          "scripts": [],
+          "references": [],
+          "other_files": []
+        }
+      },
+      "skill_names": [
+        "box-least-squares",
+        "exoplanet-workflows",
+        "light-curve-preprocessing",
+        "lomb-scargle-periodogram",
+        "transit-least-squares"
+      ],
+      "total_scripts": 0
+    },
+    "financial-modeling-qa": {
+      "difficulty": "hard\"  # easy, medium, hard",
+      "category": "financial modeling",
+      "instruction_preview": "Please analysis large-scale data file and give me answer for a financial data analysis question.\n\nThe data file is located at /root/data.xlsx. \nThe background of the question is located at /root/background.pdf. \nThe question is: If the odd numbered games are played by Player 1, and the even numbered games are played by Player 2, and they are matched off against each other (e.g. game 1 vs game 2, game 3 vs game 4) what is the value of (Number of matches won by Player 1) minus (Number of matches w",
+      "skills": {
+        "pdf": {
+          "has_skill_md": true,
+          "scripts": [
+            "scripts\\check_bounding_boxes.py",
+            "scripts\\check_bounding_boxes_test.py",
+            "scripts\\check_fillable_fields.py",
+            "scripts\\convert_pdf_to_images.py",
+            "scripts\\create_validation_image.py",
+            "scripts\\extract_form_field_info.py",
+            "scripts\\fill_fillable_fields.py",
+            "scripts\\fill_pdf_form_with_annotations.py"
+          ],
+          "references": [
+            "references\\forms.md",
+            "references\\LICENSE.txt",
+            "references\\reference.md"
+          ],
+          "other_files": []
+        },
+        "xlsx": {
+          "has_skill_md": true,
+          "scripts": [],
+          "references": [],
+          "other_files": [
+            "LICENSE.txt",
+            "recalc.py"
+          ]
+        }
+      },
+      "skill_names": [
+        "pdf",
+        "xlsx"
+      ],
+      "total_scripts": 8
+    },
+    "find-topk-similiar-chemicals": {
+      "difficulty": "medium",
+      "category": "chemistry",
+      "instruction_preview": "Find the top k similar chemicals in `molecules.pdf` to any chemicals you are given.\n\nFor converting chemical names into molecular representations, you need to use an external chemistry resources like PubChem or RDKit. For computing similarity, use Morgan fingerprints with Tanimoto similarity (radius = 2, include chirality). The results should be sorted in descending order of similarity, with alphabetical ordering when ties happen.\n\nWrite your solution to `/root/workspace/solution.py`. You also n",
+      "skills": {
+        "pdf": {
+          "has_skill_md": true,
+          "scripts": [
+            "scripts\\check_bounding_boxes.py",
+            "scripts\\check_bounding_boxes_test.py",
+            "scripts\\check_fillable_fields.py",
+            "scripts\\convert_pdf_to_images.py",
+            "scripts\\create_validation_image.py",
+            "scripts\\extract_form_field_info.py",
+            "scripts\\fill_fillable_fields.py",
+            "scripts\\fill_pdf_form_with_annotations.py"
+          ],
+          "references": [],
+          "other_files": [
+            "forms.md",
+            "LICENSE.txt",
+            "reference.md"
+          ]
+        },
+        "pubchem-database": {
+          "has_skill_md": true,
+          "scripts": [
+            "scripts\\bioactivity_query.py",
+            "scripts\\compound_search.py"
+          ],
+          "references": [
+            "references\\api_reference.md"
+          ],
+          "other_files": []
+        },
+        "rdkit": {
+          "has_skill_md": true,
+          "scripts": [
+            "scripts\\molecular_properties.py",
+            "scripts\\similarity_search.py",
+            "scripts\\substructure_filter.py"
+          ],
+          "references": [
+            "references\\api_reference.md",
+            "references\\descriptors_reference.md",
+            "references\\smarts_patterns.md"
+          ],
+          "other_files": []
+        }
+      },
+      "skill_names": [
+        "pdf",
+        "pubchem-database",
+        "rdkit"
+      ],
+      "total_scripts": 13
+    },
+    "fix-build-agentops": {
+      "difficulty": "easy",
+      "category": "Compilation & Build",
+      "instruction_preview": "You need to fix errors in a Python codebase.\nThe repository is located in `/home/github/build/failed/<repo>/<id>`.\n\nStep 1: Analyze the repository to identify the errors causing the build to fail.\nIdentify if the errors are within the code or build configuration.\nWrite your analysis and plan in `/home/github/build/failed/failed_reasons.txt`.\nThis file is for you to use in the next step.\n\nStep 2: Use your notes written in `/home/github/build/failed/failed_reasons.txt`\nto fix the errors.\nFirst, wr",
+      "skills": {
+        "analyze-ci": {
+          "has_skill_md": true,
+          "scripts": [],
+          "references": [],
+          "other_files": []
+        },
+        "temporal-python-testing": {
+          "has_skill_md": true,
+          "scripts": [],
+          "references": [],
+          "other_files": [
+            "resources\\integration-testing.md",
+            "resources\\local-setup.md",
+            "resources\\replay-testing.md",
+            "resources\\unit-testing.md"
+          ]
+        },
+        "testing-python": {
+          "has_skill_md": true,
+          "scripts": [],
+          "references": [],
+          "other_files": []
+        },
+        "uv-package-manager": {
+          "has_skill_md": true,
+          "scripts": [],
+          "references": [],
+          "other_files": []
+        }
+      },
+      "skill_names": [
+        "analyze-ci",
+        "temporal-python-testing",
+        "testing-python",
+        "uv-package-manager"
+      ],
+      "total_scripts": 0
+    },
+    "fix-build-google-auto": {
+      "difficulty": "easy",
+      "category": "Compilation & Build",
+      "instruction_preview": "You need to fix build errors in a Java codebase.\nThe repository is located in `/home/travis/build/failed/<repo>/<id>`.\n\nStep 1: Analyze the repository to identify the errors causing the build to fail.\nIdentify if the errors are within the code or build configuration.\nWrite your analysis and plan in `/home/travis/build/failed/failed_reasons.txt`.\nThis file is for you to use in the next step.\n\nStep 2: Use your notes written in `/home/travis/build/failed/failed_reasons.txt`\nto fix the errors.\nFirst",
+      "skills": {
+        "maven-build-lifecycle": {
+          "has_skill_md": true,
+          "scripts": [],
+          "references": [],
+          "other_files": []
+        },
+        "maven-dependency-management": {
+          "has_skill_md": true,
+          "scripts": [],
+          "references": [],
+          "other_files": []
+        },
+        "maven-plugin-configuration": {
+          "has_skill_md": true,
+          "scripts": [],
+          "references": [],
+          "other_files": []
+        }
+      },
+      "skill_names": [
+        "maven-build-lifecycle",
+        "maven-dependency-management",
+        "maven-plugin-configuration"
+      ],
+      "total_scripts": 0
+    },
+    "fix-druid-loophole-cve": {
+      "difficulty": "hard",
+      "category": "Security",
+      "instruction_preview": "A vulnerability has been found in Apache Druid version 0.20.0: authenticated attackers can execute arbitrary code on the server through malicious JavaScript payloads, for example:\n\n```http\nPOST /druid/indexer/v1/sampler HTTP/1.1\nContent-Type: application/json\n\n{\n  \"type\": \"index\",\n  \"spec\": {\n    \"dataSchema\": {\n      \"transformSpec\": {\n        \"filter\": {\n          \"type\": \"javascript\",\n          \"function\": \"function(){java.lang.Runtime.getRuntime().exec('malicious_command');}\",\n          \"\": ",
+      "skills": {
+        "jackson-security": {
+          "has_skill_md": true,
+          "scripts": [],
+          "references": [],
+          "other_files": []
+        },
+        "senior-java": {
+          "has_skill_md": true,
+          "scripts": [
+            "scripts\\api_endpoint_generator.py",
+            "scripts\\dependency_analyzer.py",
+            "scripts\\entity_generator.py",
+            "scripts\\performance_profiler.py",
+            "scripts\\security_config_generator.py",
+            "scripts\\spring_project_scaffolder.py"
+          ],
+          "references": [
+            "references\\java-performance-tuning.md",
+            "references\\jpa-hibernate-guide.md",
+            "references\\microservices-patterns.md",
+            "references\\spring-boot-best-practices.md",
+            "references\\spring-security-reference.md"
+          ],
+          "other_files": [
+            "HOW_TO_USE.md",
+            "assets\\.gitkeep",
+            "references\\java-performance-tuning",
+            "references\\jpa-hibernate-guide",
+            "references\\microservices-patterns",
+            "references\\spring-boot-best-practices",
+            "references\\spring-security-reference",
+            "scripts\\api_endpoint_generator",
+            "scripts\\dependency_analyzer",
+            "scripts\\entity_generator",
+            "scripts\\performance_profiler",
+            "scripts\\security_config_generator",
+            "scripts\\spring_project_scaffolder"
+          ]
+        }
+      },
+      "skill_names": [
+        "jackson-security",
+        "senior-java"
+      ],
+      "total_scripts": 6
+    },
+    "fix-erlang-ssh-cve": {
+      "difficulty": "hard\"  # easy, medium, hard",
+      "category": "erlang bugfix",
+      "instruction_preview": "Erlang/OTP SSH is the built-in SSH server component of the Erlang/OTP platform.\n\nA critical vulnerability was discovered in the Erlang/OTP SSH server, allowing attackers to execute arbitrary system commands remotely without authentication by crafting specific SSH protocol messages. In `/app/workspace/otp_src_27.3.2` we provide the source code of an affected version of Erlang/OTP SSH server.\n\nTry to investigate which type of ssh message will cause this attack, and fix this bug. After the bugfix, ",
+      "skills": {
+        "erlang-concurrency": {
+          "has_skill_md": true,
+          "scripts": [],
+          "references": [],
+          "other_files": []
+        },
+        "erlang-distribution": {
+          "has_skill_md": true,
+          "scripts": [],
+          "references": [],
+          "other_files": []
+        },
+        "erlang-otp-behaviors": {
+          "has_skill_md": true,
+          "scripts": [],
+          "references": [],
+          "other_files": []
+        },
+        "find-bugs": {
+          "has_skill_md": true,
+          "scripts": [],
+          "references": [],
+          "other_files": []
+        },
+        "senior-security": {
+          "has_skill_md": true,
+          "scripts": [
+            "scripts\\pentest_automator.py",
+            "scripts\\security_auditor.py",
+            "scripts\\threat_modeler.py"
+          ],
+          "references": [
+            "references\\cryptography_implementation.md",
+            "references\\penetration_testing_guide.md",
+            "references\\security_architecture_patterns.md"
+          ],
+          "other_files": []
+        },
+        "ssh-penetration-testing": {
+          "has_skill_md": true,
+          "scripts": [],
+          "references": [],
+          "other_files": []
+        }
+      },
+      "skill_names": [
+        "erlang-concurrency",
+        "erlang-distribution",
+        "erlang-otp-behaviors",
+        "find-bugs",
+        "senior-security",
+        "ssh-penetration-testing"
+      ],
+      "total_scripts": 3
+    },
+    "fix-visual-stability": {
+      "difficulty": "hard",
+      "category": "web-performance",
+      "instruction_preview": "There's a Next.js e-commerce app at `/app`. Users experience visual instability issues including layout shifts and generally a bad experience.\n\nYour job is to assess the root cause of the user experience issues by using best practices in nexts and react and fix accordingly.\n\n## Rules\n\n- Don't break existing functionality\n- Don't change existing class names, ids or data-testid on any of the components as tests rely on them\n",
+      "skills": {
+        "browser-testing": {
+          "has_skill_md": true,
+          "scripts": [],
+          "references": [],
+          "other_files": [
+            "detect-flicker.ts",
+            "measure-cls.ts",
+            "measure.ts"
+          ]
+        },
+        "react-best-practices": {
+          "has_skill_md": true,
+          "scripts": [],
+          "references": [],
+          "other_files": [
+            "rules\\advanced-event-handler-refs.md",
+            "rules\\advanced-use-latest.md",
+            "rules\\async-api-routes.md",
+            "rules\\async-defer-await.md",
+            "rules\\async-dependencies.md",
+            "rules\\async-parallel.md",
+            "rules\\async-suspense-boundaries.md",
+            "rules\\bundle-barrel-imports.md",
+            "rules\\bundle-conditional.md",
+            "rules\\bundle-defer-third-party.md",
+            "rules\\bundle-dynamic-imports.md",
+            "rules\\bundle-preload.md",
+            "rules\\client-event-listeners.md",
+            "rules\\client-localstorage-schema.md",
+            "rules\\client-passive-event-listeners.md",
+            "rules\\client-swr-dedup.md",
+            "rules\\js-batch-dom-css.md",
+            "rules\\js-cache-function-results.md",
+            "rules\\js-cache-property-access.md",
+            "rules\\js-cache-storage.md",
+            "rules\\js-combine-iterations.md",
+            "rules\\js-early-exit.md",
+            "rules\\js-hoist-regexp.md",
+            "rules\\js-index-maps.md",
+            "rules\\js-length-check-first.md",
+            "rules\\js-min-max-loop.md",
+            "rules\\js-set-map-lookups.md",
+            "rules\\js-tosorted-immutable.md",
+            "rules\\rendering-activity.md",
+            "rules\\rendering-animate-svg-wrapper.md",
+            "rules\\rendering-conditional-render.md",
+            "rules\\rendering-content-visibility.md",
+            "rules\\rendering-hoist-jsx.md",
+            "rules\\rendering-hydration-no-flicker.md",
+            "rules\\rendering-svg-precision.md",
+            "rules\\rerender-defer-reads.md",
+            "rules\\rerender-dependencies.md",
+            "rules\\rerender-derived-state.md",
+            "rules\\rerender-functional-setstate.md",
+            "rules\\rerender-lazy-state-init.md",
+            "rules\\rerender-memo.md",
+            "rules\\rerender-transitions.md",
+            "rules\\server-after-nonblocking.md",
+            "rules\\server-cache-lru.md",
+            "rules\\server-cache-react.md",
+            "rules\\server-parallel-fetching.md",
+            "rules\\server-serialization.md",
+            "rules\\_sections.md",
+            "rules\\_template.md"
+          ]
+        },
+        "web-interface-guidelines": {
+          "has_skill_md": true,
+          "scripts": [],
+          "references": [],
+          "other_files": [
+            "LICENSE"
+          ]
+        }
+      },
+      "skill_names": [
+        "browser-testing",
+        "react-best-practices",
+        "web-interface-guidelines"
+      ],
+      "total_scripts": 0
+    },
+    "flink-query": {
+      "difficulty": "hard\"  # easy, medium, hard",
+      "category": "flink",
+      "instruction_preview": "In `/app/workspace/` I provided a skeleton code of a flink job and a dataset.\n\nThe provided dataset files are under `/app/workspace/data/`. It is a subset of the Google cluster-usage traces dataset. Read `/app/workspace/data/format.pdf` and `/app/workspace/data/ClusterData2011_2.md` to understand the data schema. The data files are compressed in `.gz` format (gzipped CSV). The dataset contains timestamps in microseconds.\n\n\n## Task\n\nIn `/app/workspace/src/main/java/clusterdata/query/LongestSessio",
+      "skills": {
+        "pdf": {
+          "has_skill_md": true,
+          "scripts": [
+            "scripts\\check_bounding_boxes.py",
+            "scripts\\check_bounding_boxes_test.py",
+            "scripts\\check_fillable_fields.py",
+            "scripts\\convert_pdf_to_images.py",
+            "scripts\\create_validation_image.py",
+            "scripts\\extract_form_field_info.py",
+            "scripts\\fill_fillable_fields.py",
+            "scripts\\fill_pdf_form_with_annotations.py"
+          ],
+          "references": [],
+          "other_files": [
+            "forms.md",
+            "LICENSE.txt",
+            "reference.md"
+          ]
+        },
+        "senior-data-engineer": {
+          "has_skill_md": true,
+          "scripts": [
+            "scripts\\data_quality_validator.py",
+            "scripts\\etl_performance_optimizer.py",
+            "scripts\\kafka_config_generator.py",
+            "scripts\\pipeline_orchestrator.py",
+            "scripts\\streaming_quality_validator.py",
+            "scripts\\stream_processor.py"
+          ],
+          "references": [
+            "references\\frameworks.md",
+            "references\\templates.md",
+            "references\\tools.md"
+          ],
+          "other_files": [
+            "HOW_TO_USE.md",
+            "assets\\.gitkeep",
+            "assets\\data-quality-checklist.md",
+            "assets\\pipeline-design-template.md"
+          ]
+        }
+      },
+      "skill_names": [
+        "pdf",
+        "senior-data-engineer"
+      ],
+      "total_scripts": 14
+    },
+    "flood-risk-analysis": {
+      "difficulty": "medium",
+      "category": "data-processing",
+      "instruction_preview": "Find stations experienced flooding during April 1-7, 2025. USGS stations data is in `/root/data/michigan_stations.txt` which contains streamflow records. You should output a CSV file to `/root/output/flood_results.csv`. The 'flood_results.csv' should have  two columns: `station_id` (the USGS station ID) and `flood_days` (the number of days with flooding). I only want to keep stations that had at least one flood day.\n",
+      "skills": {
+        "flood-detection": {
+          "has_skill_md": true,
+          "scripts": [],
+          "references": [],
+          "other_files": []
+        },
+        "nws-flood-thresholds": {
+          "has_skill_md": true,
+          "scripts": [],
+          "references": [],
+          "other_files": []
+        },
+        "usgs-data-download": {
+          "has_skill_md": true,
+          "scripts": [],
+          "references": [],
+          "other_files": []
+        }
+      },
+      "skill_names": [
+        "flood-detection",
+        "nws-flood-thresholds",
+        "usgs-data-download"
+      ],
+      "total_scripts": 0
+    },
+    "gh-repo-analytics": {
+      "difficulty": "medium",
+      "category": "devops-analytics",
+      "instruction_preview": "I\u2019m preparing a short \"December community pulse\" write-up for the `cli/cli` repository, and I want you to help me turn raw activity into a clean, meeting-ready summary.\n\nFor the period 2024-12-01 to 2024-12-31, I want you to gather the following:\n\n# Pull Requests\n\n- I want you to count how many PRs were created during the month.\n- I want you to report, as of today, how many of those PRs have been merged and how many have been closed.\n- I want you to compute the average time-to-merge (in days) ac",
+      "skills": {
+        "gh-cli": {
+          "has_skill_md": true,
+          "scripts": [],
+          "references": [],
+          "other_files": []
+        }
+      },
+      "skill_names": [
+        "gh-cli"
+      ],
+      "total_scripts": 0
+    },
+    "glm-lake-mendota": {
+      "difficulty": "hard",
+      "category": "environmental-modeling",
+      "instruction_preview": "Please run the General Lake Model to simulate the vertical water temperature for Lake Mendota. The RMSE between the observation and the simulation should be smaller than 2 degrees Celsius.\n\nThe data that you may use includes:\n1. Meteorological and hydrological forcing data in `/root/bcs/`\n2. Field water temperature observations data in `/root/field_temp_oxy.csv`\n3. GLM configuration file in `/root/glm3.nml`.\n\nYou should generate the simulation output from 2009-01-01 to 2015-12-30 at `/root/outpu",
+      "skills": {
+        "glm-basics": {
+          "has_skill_md": true,
+          "scripts": [],
+          "references": [],
+          "other_files": []
+        },
+        "glm-calibration": {
+          "has_skill_md": true,
+          "scripts": [],
+          "references": [],
+          "other_files": []
+        },
+        "glm-output": {
+          "has_skill_md": true,
+          "scripts": [],
+          "references": [],
+          "other_files": []
+        }
+      },
+      "skill_names": [
+        "glm-basics",
+        "glm-calibration",
+        "glm-output"
+      ],
+      "total_scripts": 0
+    },
+    "gravitational-wave-detection": {
+      "difficulty": "medium",
+      "category": "astronomy",
+      "instruction_preview": "You are asked to detect a potential gravitational wave signal from a binary black hole merger in noisy data from a gravitational wave detector with the help of the matched filtering technique.\n\nThe data is located in `/root/data/PyCBC_T2_2.gwf` in the channel `H1:TEST-STRAIN`. Condition the raw detector data and then perform matched filtering to find the template that matches best from the approximants \"SEOBNRv4_opt\", \"IMRPhenomD\", and \"TaylorT4\" with a grid search over the mass parameters mass1",
+      "skills": {
+        "conditioning": {
+          "has_skill_md": true,
+          "scripts": [],
+          "references": [],
+          "other_files": []
+        },
+        "matched-filtering": {
+          "has_skill_md": true,
+          "scripts": [],
+          "references": [],
+          "other_files": []
+        }
+      },
+      "skill_names": [
+        "conditioning",
+        "matched-filtering"
+      ],
+      "total_scripts": 0
+    },
+    "grid-dispatch-operator": {
+      "difficulty": "medium",
+      "category": "energy",
+      "instruction_preview": "You are a Grid Dispatch Operator. Given a power network snapshot, you want to decide the generators' dispatches. The dispatches should be economically efficient while satisfying the energy market requirement:\n1. DC power balance at each bus\n2. Generator and transmission limits\n3. Spinning reserve requirements with standard capacity coupling\n\nThe data `network.json` contains network snapshot in MATPOWER format.\n\nDo the analysis and generate `report.json` containing:\n\n- Active dispatch and reserve",
+      "skills": {
+        "dc-power-flow": {
+          "has_skill_md": true,
+          "scripts": [
+            "scripts\\build_b_matrix.py"
+          ],
+          "references": [],
+          "other_files": []
+        },
+        "economic-dispatch": {
+          "has_skill_md": true,
+          "scripts": [],
+          "references": [
+            "references\\cost-functions.md"
+          ],
+          "other_files": []
+        },
+        "power-flow-data": {
+          "has_skill_md": true,
+          "scripts": [],
+          "references": [],
+          "other_files": []
+        }
+      },
+      "skill_names": [
+        "dc-power-flow",
+        "economic-dispatch",
+        "power-flow-data"
+      ],
+      "total_scripts": 1
+    },
+    "hvac-control": {
+      "difficulty": "medium",
+      "category": "control-systems",
+      "instruction_preview": "You need to implement a temperature controller to maintain a temperature of 22.0C. And the targets are: steady-state error <0.5C, settling time <120s, overshoot <10% , control duration >=150s, max temperature <30C. Also consider the constraints: Initial temperature ~18.0C (+/-2C sensor noise), heater power 0-100%. Simulator environment is hvac_simulator.py. You can use that to get initial temperature and doing some follow work.\n\n\nRun a calibration test to characterize the room (need at least 30 ",
+      "skills": {
+        "excitation-signal-design": {
+          "has_skill_md": true,
+          "scripts": [],
+          "references": [],
+          "other_files": []
+        },
+        "first-order-model-fitting": {
+          "has_skill_md": true,
+          "scripts": [],
+          "references": [],
+          "other_files": []
+        },
+        "imc-tuning-rules": {
+          "has_skill_md": true,
+          "scripts": [],
+          "references": [],
+          "other_files": []
+        },
+        "safety-interlocks": {
+          "has_skill_md": true,
+          "scripts": [],
+          "references": [],
+          "other_files": []
+        },
+        "scipy-curve-fit": {
+          "has_skill_md": true,
+          "scripts": [],
+          "references": [],
+          "other_files": []
+        }
+      },
+      "skill_names": [
+        "excitation-signal-design",
+        "first-order-model-fitting",
+        "imc-tuning-rules",
+        "safety-interlocks",
+        "scipy-curve-fit"
+      ],
+      "total_scripts": 0
+    },
+    "invoice-fraud-detection": {
+      "difficulty": "hard",
+      "category": "data-validation",
+      "instruction_preview": "You need to analyze the following files to find any potential invoice fraud:\n- `/root/invoices.pdf`: One invoice per page.\n- `/root/vendors.xlsx`: Approved vendors with corresponding Vendor ID, Name, and authorized IBAN.\n- `/root/purchase_orders.csv`: Valid purchase orders with corresponding PO Number, Amount, and Vendor ID.\n\nAn invoice is considered fraudulent if it meets ANY of the following criteria:\n- Unknown Vendor: The vendor name doesn't exist in `vendors.xlsx`. Vendor names can have mino",
+      "skills": {
+        "fuzzy-match": {
+          "has_skill_md": true,
+          "scripts": [],
+          "references": [],
+          "other_files": []
+        },
+        "pdf": {
+          "has_skill_md": true,
+          "scripts": [
+            "scripts\\check_bounding_boxes.py",
+            "scripts\\check_bounding_boxes_test.py",
+            "scripts\\check_fillable_fields.py",
+            "scripts\\convert_pdf_to_images.py",
+            "scripts\\create_validation_image.py",
+            "scripts\\extract_form_field_info.py",
+            "scripts\\fill_fillable_fields.py",
+            "scripts\\fill_pdf_form_with_annotations.py"
+          ],
+          "references": [],
+          "other_files": [
+            "forms.md",
+            "LICENSE.txt",
+            "reference.md"
+          ]
+        },
+        "xlsx": {
+          "has_skill_md": true,
+          "scripts": [],
+          "references": [],
+          "other_files": [
+            "LICENSE.txt",
+            "recalc.py"
+          ]
+        }
+      },
+      "skill_names": [
+        "fuzzy-match",
+        "pdf",
+        "xlsx"
+      ],
+      "total_scripts": 8
+    },
+    "jax-computing-basics": {
+      "difficulty": "medium\"  # easy, medium, hard",
+      "category": "research",
+      "instruction_preview": "Given a set of tasks in \"problem.json\", complete all programming using JAX language correctly. For each task, read the input data, write JAX code to do some computation, then produce an output file and save it.\n\n1. For each task, load the input data specified by the \"input\" key in \"problem.json\".\n2. Perform the computation required by each task's \"description\" key:\n3. Save the computed outputs to the file specified by the \"output\" key in \"problem.json\".\n\nThe \"problem.json\" file has the following",
+      "skills": {
+        "jax-skills": {
+          "has_skill_md": true,
+          "scripts": [],
+          "references": [],
+          "other_files": [
+            "jax_grad.skill",
+            "jax_jit.skill",
+            "jax_load.skill",
+            "jax_map.skill",
+            "jax_reduce.skill",
+            "jax_save.skill",
+            "jax_scan.skill",
+            "jax_skills.py"
+          ]
+        }
+      },
+      "skill_names": [
+        "jax-skills"
+      ],
+      "total_scripts": 0
+    },
+    "jpg-ocr-stat": {
+      "difficulty": "hard\"  # easy, medium, hard",
+      "category": "data statistics",
+      "instruction_preview": "## Task description\n\nIn `/app/workspace/dataset/img`, I provide a set of scanned receipt images. Each receipt image contains text such as date, product name, unit price, total amount cost, etc. The text mainly consists of digits and English characters.\n\nRead all image files under the given path, extract their data and total amount, and write them into an excel file `/app/workspace/stat_ocr.xlsx`.\n\nThe output file should only contain one sheet called \"results\". It should have 3 columns:\n- `filena",
+      "skills": {
+        "image-ocr": {
+          "has_skill_md": true,
+          "scripts": [],
+          "references": [],
+          "other_files": []
+        },
+        "openai-vision": {
+          "has_skill_md": true,
+          "scripts": [],
+          "references": [],
+          "other_files": []
+        },
+        "pdf": {
+          "has_skill_md": true,
+          "scripts": [
+            "scripts\\check_bounding_boxes.py",
+            "scripts\\check_bounding_boxes_test.py",
+            "scripts\\check_fillable_fields.py",
+            "scripts\\convert_pdf_to_images.py",
+            "scripts\\create_validation_image.py",
+            "scripts\\extract_form_field_info.py",
+            "scripts\\fill_fillable_fields.py",
+            "scripts\\fill_pdf_form_with_annotations.py"
+          ],
+          "references": [],
+          "other_files": [
+            "forms.md",
+            "LICENSE.txt",
+            "reference.md"
+          ]
+        },
+        "video-frame-extraction": {
+          "has_skill_md": true,
+          "scripts": [],
+          "references": [],
+          "other_files": []
+        },
+        "xlsx": {
+          "has_skill_md": true,
+          "scripts": [],
+          "references": [],
+          "other_files": [
+            "LICENSE.txt",
+            "recalc.py"
+          ]
+        }
+      },
+      "skill_names": [
+        "image-ocr",
+        "openai-vision",
+        "pdf",
+        "video-frame-extraction",
+        "xlsx"
+      ],
+      "total_scripts": 8
+    },
+    "lab-unit-harmonization": {
+      "difficulty": "medium",
+      "category": "healthcare",
+      "instruction_preview": "You are working on the clinical lab data. The data is actually consist of multiple source coming from different heathcare systems. That means they might using different units for the same blood test. I need your help conducting unit harmonization! Be careful about the in data format and inconsistent units used.\n\nThe input data is `/root/environment/data/ckd_lab_data.csv` with 62 lab features from different labs. Some patients records could be missing or incompleted, and should be dropped. Please",
+      "skills": {
+        "lab-unit-harmonization": {
+          "has_skill_md": true,
+          "scripts": [],
+          "references": [],
+          "other_files": [
+            "reference\\ckd_lab_features.md"
+          ]
+        }
+      },
+      "skill_names": [
+        "lab-unit-harmonization"
+      ],
+      "total_scripts": 0
+    },
+    "lake-warming-attribution": {
+      "difficulty": "medium",
+      "category": "data-processing",
+      "instruction_preview": "My data is in `/root/data/`, which includes:\n1. `water_temperature.csv`: Lake surface temperature (0-5m)\n2. `climate.csv`: Climate variables\n3. `land_cover.csv`: Land cover data\n4. `hydrology.csv`: Hydrology data\n\nFirst, I want to do a trend analysis to determine whether there is a long-term warming trend for the water temperature. You should output the 'trend_result.csv' in '/root/output/'. The file should have two columns: one is \"slope,\" and the other is \"p-value.\"\n\nSecond, I want to know the",
+      "skills": {
+        "contribution-analysis": {
+          "has_skill_md": true,
+          "scripts": [],
+          "references": [],
+          "other_files": []
+        },
+        "meteorology-driver-classification": {
+          "has_skill_md": true,
+          "scripts": [],
+          "references": [],
+          "other_files": []
+        },
+        "pca-decomposition": {
+          "has_skill_md": true,
+          "scripts": [],
+          "references": [],
+          "other_files": []
+        },
+        "trend-analysis": {
+          "has_skill_md": true,
+          "scripts": [],
+          "references": [],
+          "other_files": []
+        }
+      },
+      "skill_names": [
+        "contribution-analysis",
+        "meteorology-driver-classification",
+        "pca-decomposition",
+        "trend-analysis"
+      ],
+      "total_scripts": 0
+    },
+    "latex-formula-extraction": {
+      "difficulty": "medium",
+      "category": "latex-extraction",
+      "instruction_preview": "You are helping to extract all latex formulas in its own line from a research paper.\n\nThe paper is (`latex_paper.pdf`).\n\nYour task is to:\n\n1. Identify all latex formulas in its own line in each page (note that not every page has formulas in its own line)\n2. Extract them as raw latex text string using `$$ ... $$` method, and make sure they can be properly rendered exactly same as original pdf display\n3. Organize them in the markdown format (as illustrated below)\n4. Remove tags, commas, or periods",
+      "skills": {
+        "marker": {
+          "has_skill_md": true,
+          "scripts": [
+            "scripts\\marker_to_markdown.py"
+          ],
+          "references": [],
+          "other_files": []
+        },
+        "pdf": {
+          "has_skill_md": true,
+          "scripts": [
+            "scripts\\check_bounding_boxes.py",
+            "scripts\\check_bounding_boxes_test.py",
+            "scripts\\check_fillable_fields.py",
+            "scripts\\convert_pdf_to_images.py",
+            "scripts\\create_validation_image.py",
+            "scripts\\extract_form_field_info.py",
+            "scripts\\fill_fillable_fields.py",
+            "scripts\\fill_pdf_form_with_annotations.py"
+          ],
+          "references": [],
+          "other_files": [
+            "forms.md",
+            "LICENSE.txt",
+            "reference.md"
+          ]
+        }
+      },
+      "skill_names": [
+        "marker",
+        "pdf"
+      ],
+      "total_scripts": 9
+    },
+    "lean4-proof": {
+      "difficulty": "medium\"  # easy, medium, hard",
+      "category": "formal method",
+      "instruction_preview": "\nIn `/app/workspace/solution.lean`, I provide a template of lean4 proof for the following problem. Starting line 15, use lean4 to finalize the proof.\n\n\nSequence $(S_n)$ is defined as:\n\n$$\n\\begin{aligned}\nS_0 &= 1 \\\\\n\\text{for } n \\in \\mathbb{N}, \\quad S_{n+1} &= S_n + \\frac{1}{2^{n+1}}.\n\\end{aligned}\n$$\n\nThus, $S_n = \\sum_{i=0}^n \\frac{1}{2^i}$ .\n\nProve that $S_n \\leq 2$ for all $n \\in  \\mathbb{N}$.\n\n\n\nConstraints:\n- Do not change anything before line 15 in `solution.lean`, including the import ",
+      "skills": {
+        "lean4-memories": {
+          "has_skill_md": true,
+          "scripts": [
+            "scripts\\memory_helper.py"
+          ],
+          "references": [
+            "references\\memory-patterns.md"
+          ],
+          "other_files": []
+        },
+        "lean4-theorem-proving": {
+          "has_skill_md": true,
+          "scripts": [],
+          "references": [
+            "references\\axiom-elimination.md",
+            "references\\calc-patterns.md",
+            "references\\compilation-errors.md",
+            "references\\compiler-guided-repair.md",
+            "references\\domain-patterns.md",
+            "references\\instance-pollution.md",
+            "references\\lean-lsp-server.md",
+            "references\\lean-lsp-tools-api.md",
+            "references\\lean-phrasebook.md",
+            "references\\mathlib-guide.md",
+            "references\\mathlib-style.md",
+            "references\\measure-theory.md",
+            "references\\performance-optimization.md",
+            "references\\proof-golfing-patterns.md",
+            "references\\proof-golfing-safety.md",
+            "references\\proof-golfing.md",
+            "references\\proof-refactoring.md",
+            "references\\sorry-filling.md",
+            "references\\subagent-workflows.md",
+            "references\\tactics-reference.md"
+          ],
+          "other_files": []
+        }
+      },
+      "skill_names": [
+        "lean4-memories",
+        "lean4-theorem-proving"
+      ],
+      "total_scripts": 1
+    },
+    "manufacturing-codebook-normalization": {
+      "difficulty": "medium",
+      "category": "manufacturing",
+      "instruction_preview": "At manufacturing test centers, testing engineers often write recognized defect reasons quickly with typos, noise, abbreviations, Chinese-English characters mixtures, etc. These texts vary largely between different testing engineers. Testing engineers are given standard codebooks but they may not follow this standardization, making them hard for others to understand. Your task is to normalize the reason texts in the test center logs into an easy-to-read, clear, and standard codebook format. Solve",
+      "skills": {
+        "manufacturing-failure-reason-codebook-normalization": {
+          "has_skill_md": true,
+          "scripts": [],
+          "references": [],
+          "other_files": []
+        }
+      },
+      "skill_names": [
+        "manufacturing-failure-reason-codebook-normalization"
+      ],
+      "total_scripts": 0
+    },
+    "manufacturing-equipment-maintenance": {
+      "difficulty": "medium",
+      "category": "manufacturing",
+      "instruction_preview": "Automation engineers in manufacturing rely on the instructions and guidance provided by the reflow machine handbook to maintain reflow machines and solve error issues. In order to complete the root cause analysis and do necessary calculations, automation engineers also need to check MES system logs, thermocouple sensor data, and test defect data. Your task is to answer automation engineers' questions and provide clear instructions regarding reflow equipment maintenance and process compliance. So",
+      "skills": {
+        "reflow-profile-compliance-toolkit": {
+          "has_skill_md": true,
+          "scripts": [],
+          "references": [],
+          "other_files": []
+        },
+        "reflow_machine_maintenance_guidance": {
+          "has_skill_md": true,
+          "scripts": [],
+          "references": [],
+          "other_files": []
+        }
+      },
+      "skill_names": [
+        "reflow-profile-compliance-toolkit",
+        "reflow_machine_maintenance_guidance"
+      ],
+      "total_scripts": 0
+    },
+    "manufacturing-fjsp-optimization": {
+      "difficulty": "medium",
+      "category": "manufacturing",
+      "instruction_preview": "In the manufacturing production planning phase, multiple production jobs should be arranged in a sequence of steps. Each step can be completed in different lines and machines with different processing time. Industrial engineers propose baseline schedules. However, these schedules may not always be optimal and feasible, considering the machine downtime windows and policy budget data. Your task is to generate a feasible schedule with less makespan and no worse policy budgets. Solve this task step ",
+      "skills": {
+        "fjsp-baseline-repair-with-downtime-and-policy": {
+          "has_skill_md": true,
+          "scripts": [],
+          "references": [],
+          "other_files": []
+        }
+      },
+      "skill_names": [
+        "fjsp-baseline-repair-with-downtime-and-policy"
+      ],
+      "total_scripts": 0
+    },
+    "mario-coin-counting": {
+      "difficulty": "medium",
+      "category": "image-processing",
+      "instruction_preview": "In this task, you are given a clip of screen recording of a player playing the game Super Mario. Your goal is to analyze the key frames in this video and count how many coins / enemies / turtles ever showing up in each frame and write the results into a CSV file located in `/root/counting_results.csv`.\n\nStep 1. The video file for this problem is located in `/root/super-mario.mp4`. You need to use video frame extraction skill to convert the MP4 video file into several key frames and store them in",
+      "skills": {
+        "ffmpeg": {
+          "has_skill_md": true,
+          "scripts": [],
+          "references": [],
+          "other_files": []
+        },
+        "image_editing": {
+          "has_skill_md": true,
+          "scripts": [],
+          "references": [],
+          "other_files": []
+        },
+        "object_counter": {
+          "has_skill_md": true,
+          "scripts": [
+            "scripts\\count_objects.py"
+          ],
+          "references": [],
+          "other_files": []
+        }
+      },
+      "skill_names": [
+        "ffmpeg",
+        "image_editing",
+        "object_counter"
+      ],
+      "total_scripts": 1
+    },
+    "mars-clouds-clustering": {
+      "difficulty": "hard",
+      "category": "data-science",
+      "instruction_preview": "# Mars Cloud Clustering Optimization\n\n## Task\n\nOptimize DBSCAN hyperparameters to cluster citizen science annotations of Mars clouds. Find the **Pareto frontier** of solutions that balance:\n\n- **Maximize F1 score** \u2014 agreement between clustered annotations and expert labels\n- **Minimize delta** \u2014 average standard Euclidean distance between matched cluster centroids and expert points\n\n## Data\n\nLocated in `/root/data/`:\n\n- `citsci_train.csv` \u2014 Citizen science annotations (columns: `file_rad`, `x`,",
+      "skills": {
+        "custom-distance-metrics": {
+          "has_skill_md": true,
+          "scripts": [],
+          "references": [],
+          "other_files": []
+        },
+        "parallel-processing": {
+          "has_skill_md": true,
+          "scripts": [],
+          "references": [],
+          "other_files": []
+        },
+        "pareto-optimization": {
+          "has_skill_md": true,
+          "scripts": [],
+          "references": [],
+          "other_files": []
+        }
+      },
+      "skill_names": [
+        "custom-distance-metrics",
+        "parallel-processing",
+        "pareto-optimization"
+      ],
+      "total_scripts": 0
+    },
+    "mhc-layer-impl": {
+      "difficulty": "hard",
+      "category": "ml-implementation",
+      "instruction_preview": "I want to improve stability of training nanoGPT (124M) model. Inspired by DeepSeek's paper (2025), I want to implement mHC layer during training process.\n\nThe training using A100 GPU from modal(https://modal.com/) on Fineweb dataset, baseline model provided in /root/src (data, model, train.py). Your task is to implement the mHC layer during training process as described in the paper, then train both baseline and mHC model till validation loss < 4.5 or 5000 steps.\n\nYou should train both baseline ",
+      "skills": {
+        "mhc-algorithm": {
+          "has_skill_md": true,
+          "scripts": [],
+          "references": [
+            "references\\core-concepts.md",
+            "references\\gpt-integration.md",
+            "references\\module-implementation.md",
+            "references\\pitfalls.md",
+            "references\\sinkhorn-knopp.md"
+          ],
+          "other_files": []
+        },
+        "modal-gpu": {
+          "has_skill_md": true,
+          "scripts": [],
+          "references": [
+            "references\\common-issues.md",
+            "references\\data-download.md",
+            "references\\getting-started.md",
+            "references\\gpu-selection.md",
+            "references\\results.md"
+          ],
+          "other_files": []
+        },
+        "nanogpt-training": {
+          "has_skill_md": true,
+          "scripts": [],
+          "references": [
+            "references\\fineweb-data.md",
+            "references\\gpt-architecture.md",
+            "references\\hyperparameters.md",
+            "references\\optimizers.md",
+            "references\\tokenized-data.md",
+            "references\\training-loop.md"
+          ],
+          "other_files": []
+        }
+      },
+      "skill_names": [
+        "mhc-algorithm",
+        "modal-gpu",
+        "nanogpt-training"
+      ],
+      "total_scripts": 0
+    },
+    "multilingual-video-dubbing": {
+      "difficulty": "medium",
+      "category": "multimodal-video-dubbing",
+      "instruction_preview": "\nGive you a video with source audio /root/input.mp4, the precise time window where the speech must occur /root/segments.srt. The transcript for the original speaker /root/source_text.srt. The target language /root/target_language.txt. and the reference script /root/reference_target_text.srt. Help me to do the multilingual dubbing.\n\nWe want:\n1. An audio named /outputs/tts_segments/seg_0.wav. It should followed the ITU-R BS.1770-4 standard. Also, the sound should be in the human level (i.e. high q",
+      "skills": {
+        "ffmpeg-audio-processing": {
+          "has_skill_md": true,
+          "scripts": [],
+          "references": [],
+          "other_files": []
+        },
+        "ffmpeg-format-conversion": {
+          "has_skill_md": true,
+          "scripts": [],
+          "references": [],
+          "other_files": []
+        },
+        "ffmpeg-media-info": {
+          "has_skill_md": true,
+          "scripts": [],
+          "references": [],
+          "other_files": []
+        },
+        "ffmpeg-video-editing": {
+          "has_skill_md": true,
+          "scripts": [],
+          "references": [],
+          "other_files": []
+        },
+        "ffmpeg-video-filters": {
+          "has_skill_md": true,
+          "scripts": [],
+          "references": [],
+          "other_files": []
+        },
+        "text-to-speech": {
+          "has_skill_md": true,
+          "scripts": [],
+          "references": [],
+          "other_files": []
+        }
+      },
+      "skill_names": [
+        "ffmpeg-audio-processing",
+        "ffmpeg-format-conversion",
+        "ffmpeg-media-info",
+        "ffmpeg-video-editing",
+        "ffmpeg-video-filters",
+        "text-to-speech"
+      ],
+      "total_scripts": 0
+    },
+    "offer-letter-generator": {
+      "difficulty": "easy",
+      "category": "document-generation",
+      "instruction_preview": "Write an offer letter for one of our new hires. Follow the Word template (`offer_letter_template.docx`) with placeholders like `{{CANDIDATE_FULL_NAME}}`, `{{POSITION}}`, etc.\n\nThe required information is in `employee_data.json`.\n\nYour task is to fill in the placeholders in the template and save the result to `/root/offer_letter_filled.docx`. Also, there's a conditional section marked with `{{IF_RELOCATION}}...{{END_IF_RELOCATION}}`. You should keep those content if RELOCATION_PACKAGE is set to Y",
+      "skills": {
+        "docx": {
+          "has_skill_md": true,
+          "scripts": [],
+          "references": [],
+          "other_files": []
+        }
+      },
+      "skill_names": [
+        "docx"
+      ],
+      "total_scripts": 0
+    },
+    "organize-messy-files": {
+      "difficulty": "medium",
+      "category": "file-management",
+      "instruction_preview": "You need to organize more than 100 pdf papers and other files including pptx and docx into 5 different folders according to the subjects they belong to. The files are belong to 5 different subjects\n\n1. LLM\n2. Trapped ion and quantum computing\n3. Black hole\n4. DNA\n5. Music history\n\nBased on the papers / document content sort them into 5 different folders. The folders' name are as follows\n\n1. LLM\n2. trapped_ion_and_qc\n3. black_hole\n4. DNA\n5. music_history\n\nEach document belongs and only belongs to",
+      "skills": {
+        "docx": {
+          "has_skill_md": true,
+          "scripts": [
+            "ooxml\\scripts\\pack.py",
+            "ooxml\\scripts\\unpack.py",
+            "ooxml\\scripts\\validate.py",
+            "ooxml\\scripts\\validation\\base.py",
+            "ooxml\\scripts\\validation\\docx.py",
+            "ooxml\\scripts\\validation\\pptx.py",
+            "ooxml\\scripts\\validation\\redlining.py",
+            "ooxml\\scripts\\validation\\__init__.py",
+            "scripts\\document.py",
+            "scripts\\utilities.py",
+            "scripts\\__init__.py"
+          ],
+          "references": [],
+          "other_files": [
+            "docx-js.md",
+            "LICENSE.txt",
+            "ooxml.md",
+            "ooxml\\schemas\\ecma\\fouth-edition\\opc-contentTypes.xsd",
+            "ooxml\\schemas\\ecma\\fouth-edition\\opc-coreProperties.xsd",
+            "ooxml\\schemas\\ecma\\fouth-edition\\opc-digSig.xsd",
+            "ooxml\\schemas\\ecma\\fouth-edition\\opc-relationships.xsd",
+            "ooxml\\schemas\\ISO-IEC29500-4_2016\\dml-chart.xsd",
+            "ooxml\\schemas\\ISO-IEC29500-4_2016\\dml-chartDrawing.xsd",
+            "ooxml\\schemas\\ISO-IEC29500-4_2016\\dml-diagram.xsd",
+            "ooxml\\schemas\\ISO-IEC29500-4_2016\\dml-lockedCanvas.xsd",
+            "ooxml\\schemas\\ISO-IEC29500-4_2016\\dml-main.xsd",
+            "ooxml\\schemas\\ISO-IEC29500-4_2016\\dml-picture.xsd",
+            "ooxml\\schemas\\ISO-IEC29500-4_2016\\dml-spreadsheetDrawing.xsd",
+            "ooxml\\schemas\\ISO-IEC29500-4_2016\\dml-wordprocessingDrawing.xsd",
+            "ooxml\\schemas\\ISO-IEC29500-4_2016\\pml.xsd",
+            "ooxml\\schemas\\ISO-IEC29500-4_2016\\shared-additionalCharacteristics.xsd",
+            "ooxml\\schemas\\ISO-IEC29500-4_2016\\shared-bibliography.xsd",
+            "ooxml\\schemas\\ISO-IEC29500-4_2016\\shared-commonSimpleTypes.xsd",
+            "ooxml\\schemas\\ISO-IEC29500-4_2016\\shared-customXmlDataProperties.xsd",
+            "ooxml\\schemas\\ISO-IEC29500-4_2016\\shared-customXmlSchemaProperties.xsd",
+            "ooxml\\schemas\\ISO-IEC29500-4_2016\\shared-documentPropertiesCustom.xsd",
+            "ooxml\\schemas\\ISO-IEC29500-4_2016\\shared-documentPropertiesExtended.xsd",
+            "ooxml\\schemas\\ISO-IEC29500-4_2016\\shared-documentPropertiesVariantTypes.xsd",
+            "ooxml\\schemas\\ISO-IEC29500-4_2016\\shared-math.xsd",
+            "ooxml\\schemas\\ISO-IEC29500-4_2016\\shared-relationshipReference.xsd",
+            "ooxml\\schemas\\ISO-IEC29500-4_2016\\sml.xsd",
+            "ooxml\\schemas\\ISO-IEC29500-4_2016\\vml-main.xsd",
+            "ooxml\\schemas\\ISO-IEC29500-4_2016\\vml-officeDrawing.xsd",
+            "ooxml\\schemas\\ISO-IEC29500-4_2016\\vml-presentationDrawing.xsd",
+            "ooxml\\schemas\\ISO-IEC29500-4_2016\\vml-spreadsheetDrawing.xsd",
+            "ooxml\\schemas\\ISO-IEC29500-4_2016\\vml-wordprocessingDrawing.xsd",
+            "ooxml\\schemas\\ISO-IEC29500-4_2016\\wml.xsd",
+            "ooxml\\schemas\\ISO-IEC29500-4_2016\\xml.xsd",
+            "ooxml\\schemas\\mce\\mc.xsd",
+            "ooxml\\schemas\\microsoft\\wml-2010.xsd",
+            "ooxml\\schemas\\microsoft\\wml-2012.xsd",
+            "ooxml\\schemas\\microsoft\\wml-2018.xsd",
+            "ooxml\\schemas\\microsoft\\wml-cex-2018.xsd",
+            "ooxml\\schemas\\microsoft\\wml-cid-2016.xsd",
+            "ooxml\\schemas\\microsoft\\wml-sdtdatahash-2020.xsd",
+            "ooxml\\schemas\\microsoft\\wml-symex-2015.xsd",
+            "scripts\\templates\\comments.xml",
+            "scripts\\templates\\commentsExtended.xml",
+            "scripts\\templates\\commentsExtensible.xml",
+            "scripts\\templates\\commentsIds.xml",
+            "scripts\\templates\\people.xml"
+          ]
+        },
+        "file-organizer": {
+          "has_skill_md": true,
+          "scripts": [],
+          "references": [],
+          "other_files": []
+        },
+        "pdf": {
+          "has_skill_md": true,
+          "scripts": [
+            "scripts\\check_bounding_boxes.py",
+            "scripts\\check_bounding_boxes_test.py",
+            "scripts\\check_fillable_fields.py",
+            "scripts\\convert_pdf_to_images.py",
+            "scripts\\create_validation_image.py",
+            "scripts\\extract_form_field_info.py",
+            "scripts\\fill_fillable_fields.py",
+            "scripts\\fill_pdf_form_with_annotations.py"
+          ],
+          "references": [],
+          "other_files": [
+            "forms.md",
+            "LICENSE.txt",
+            "reference.md"
+          ]
+        },
+        "planning-with-files": {
+          "has_skill_md": true,
+          "scripts": [
+            "scripts\\check-complete.sh",
+            "scripts\\init-session.sh"
+          ],
+          "references": [],
+          "other_files": [
+            "examples.md",
+            "reference.md",
+            "templates\\findings.md",
+            "templates\\progress.md",
+            "templates\\task_plan.md"
+          ]
+        },
+        "pptx": {
+          "has_skill_md": true,
+          "scripts": [
+            "ooxml\\scripts\\pack.py",
+            "ooxml\\scripts\\unpack.py",
+            "ooxml\\scripts\\validate.py",
+            "ooxml\\scripts\\validation\\base.py",
+            "ooxml\\scripts\\validation\\docx.py",
+            "ooxml\\scripts\\validation\\pptx.py",
+            "ooxml\\scripts\\validation\\redlining.py",
+            "ooxml\\scripts\\validation\\__init__.py",
+            "scripts\\html2pptx.js",
+            "scripts\\inventory.py",
+            "scripts\\rearrange.py",
+            "scripts\\replace.py",
+            "scripts\\thumbnail.py"
+          ],
+          "references": [],
+          "other_files": [
+            "html2pptx.md",
+            "LICENSE.txt",
+            "ooxml.md",
+            "ooxml\\schemas\\ecma\\fouth-edition\\opc-contentTypes.xsd",
+            "ooxml\\schemas\\ecma\\fouth-edition\\opc-coreProperties.xsd",
+            "ooxml\\schemas\\ecma\\fouth-edition\\opc-digSig.xsd",
+            "ooxml\\schemas\\ecma\\fouth-edition\\opc-relationships.xsd",
+            "ooxml\\schemas\\ISO-IEC29500-4_2016\\dml-chart.xsd",
+            "ooxml\\schemas\\ISO-IEC29500-4_2016\\dml-chartDrawing.xsd",
+            "ooxml\\schemas\\ISO-IEC29500-4_2016\\dml-diagram.xsd",
+            "ooxml\\schemas\\ISO-IEC29500-4_2016\\dml-lockedCanvas.xsd",
+            "ooxml\\schemas\\ISO-IEC29500-4_2016\\dml-main.xsd",
+            "ooxml\\schemas\\ISO-IEC29500-4_2016\\dml-picture.xsd",
+            "ooxml\\schemas\\ISO-IEC29500-4_2016\\dml-spreadsheetDrawing.xsd",
+            "ooxml\\schemas\\ISO-IEC29500-4_2016\\dml-wordprocessingDrawing.xsd",
+            "ooxml\\schemas\\ISO-IEC29500-4_2016\\pml.xsd",
+            "ooxml\\schemas\\ISO-IEC29500-4_2016\\shared-additionalCharacteristics.xsd",
+            "ooxml\\schemas\\ISO-IEC29500-4_2016\\shared-bibliography.xsd",
+            "ooxml\\schemas\\ISO-IEC29500-4_2016\\shared-commonSimpleTypes.xsd",
+            "ooxml\\schemas\\ISO-IEC29500-4_2016\\shared-customXmlDataProperties.xsd",
+            "ooxml\\schemas\\ISO-IEC29500-4_2016\\shared-customXmlSchemaProperties.xsd",
+            "ooxml\\schemas\\ISO-IEC29500-4_2016\\shared-documentPropertiesCustom.xsd",
+            "ooxml\\schemas\\ISO-IEC29500-4_2016\\shared-documentPropertiesExtended.xsd",
+            "ooxml\\schemas\\ISO-IEC29500-4_2016\\shared-documentPropertiesVariantTypes.xsd",
+            "ooxml\\schemas\\ISO-IEC29500-4_2016\\shared-math.xsd",
+            "ooxml\\schemas\\ISO-IEC29500-4_2016\\shared-relationshipReference.xsd",
+            "ooxml\\schemas\\ISO-IEC29500-4_2016\\sml.xsd",
+            "ooxml\\schemas\\ISO-IEC29500-4_2016\\vml-main.xsd",
+            "ooxml\\schemas\\ISO-IEC29500-4_2016\\vml-officeDrawing.xsd",
+            "ooxml\\schemas\\ISO-IEC29500-4_2016\\vml-presentationDrawing.xsd",
+            "ooxml\\schemas\\ISO-IEC29500-4_2016\\vml-spreadsheetDrawing.xsd",
+            "ooxml\\schemas\\ISO-IEC29500-4_2016\\vml-wordprocessingDrawing.xsd",
+            "ooxml\\schemas\\ISO-IEC29500-4_2016\\wml.xsd",
+            "ooxml\\schemas\\ISO-IEC29500-4_2016\\xml.xsd",
+            "ooxml\\schemas\\mce\\mc.xsd",
+            "ooxml\\schemas\\microsoft\\wml-2010.xsd",
+            "ooxml\\schemas\\microsoft\\wml-2012.xsd",
+            "ooxml\\schemas\\microsoft\\wml-2018.xsd",
+            "ooxml\\schemas\\microsoft\\wml-cex-2018.xsd",
+            "ooxml\\schemas\\microsoft\\wml-cid-2016.xsd",
+            "ooxml\\schemas\\microsoft\\wml-sdtdatahash-2020.xsd",
+            "ooxml\\schemas\\microsoft\\wml-symex-2015.xsd"
+          ]
+        }
+      },
+      "skill_names": [
+        "docx",
+        "file-organizer",
+        "pdf",
+        "planning-with-files",
+        "pptx"
+      ],
+      "total_scripts": 34
+    },
+    "paper-anonymizer": {
+      "difficulty": "medium",
+      "category": "document-editing",
+      "instruction_preview": "Please help me anonymize these papers `/root/paper{1-3}.pdf`.\n\nYou should redact all information that could reveal authorship, including names, affiliations, and any other content that may leak author identities.\n\nInformation that need anonymization may include:\n- Some paper may come from arXiv and those identifiers will likely leak the identities\n- Some paper may include their accepted venues, those are also considered leakage  \n- Some paper may have self-citations, it should be fine if we have",
+      "skills": {
+        "academic-pdf-redaction": {
+          "has_skill_md": true,
+          "scripts": [],
+          "references": [],
+          "other_files": []
+        },
+        "pdf": {
+          "has_skill_md": true,
+          "scripts": [],
+          "references": [],
+          "other_files": [
+            "forms.md",
+            "LICENSE.txt",
+            "reference.md"
+          ]
+        }
+      },
+      "skill_names": [
+        "academic-pdf-redaction",
+        "pdf"
+      ],
+      "total_scripts": 0
+    },
+    "parallel-tfidf-search": {
+      "difficulty": "medium\"  # easy, medium, hard",
+      "category": "Parallelization",
+      "instruction_preview": "# Parallel TF-IDF Similarity Search\n\nIn `/root/workspace/`, there is a TF-IDF-based document search engine that is implemented in Python and execute on a single thread (i.e. sequentially). The core function of this  search engine include building inverted index for the document corpus and performing similarity seach based on TF-IDF scores.\n\nTo utilize all idle cores on a machine and accelerate the whole engine, you need to parallelize it and achieve speedup on multi-core systems. You should writ",
+      "skills": {
+        "memory-optimization": {
+          "has_skill_md": true,
+          "scripts": [],
+          "references": [
+            "references\\advanced_techniques.md"
+          ],
+          "other_files": []
+        },
+        "python-parallelization": {
+          "has_skill_md": true,
+          "scripts": [],
+          "references": [
+            "references\\advanced_techniques.md"
+          ],
+          "other_files": []
+        },
+        "workload-balancing": {
+          "has_skill_md": true,
+          "scripts": [],
+          "references": [
+            "references\\advanced_techniques.md"
+          ],
+          "other_files": []
+        }
+      },
+      "skill_names": [
+        "memory-optimization",
+        "python-parallelization",
+        "workload-balancing"
+      ],
+      "total_scripts": 0
+    },
+    "pddl-tpp-planning": {
+      "difficulty": "medium\"  # easy, medium, hard",
+      "category": "research",
+      "instruction_preview": "Solve travelling purchase problem (TPP) tasks using PDDL (Planning Domain Definition Language).\n\nEach task has two input files: a PDDL domain file and a PDDL problem file. As a planning agent, you may need both of them. The domain and problem file paths for each task are specified the \"domain\" key and \"problem\" key in the `problem.json` file. An example task entry looks like below:\n\n```json\n[\n  {\n  \"id\": \"problem_id\",\n  \"domain\": \".../xxx.pddl\",\n  \"problem\": \".../yyy.pddl\",\n  \"plan_output\": \"xxx",
+      "skills": {
+        "pddl-skills": {
+          "has_skill_md": true,
+          "scripts": [],
+          "references": [],
+          "other_files": [
+            "generate_plan.skill",
+            "load_problem.skill",
+            "save_plan.skill",
+            "validate.skill"
+          ]
+        }
+      },
+      "skill_names": [
+        "pddl-skills"
+      ],
+      "total_scripts": 0
+    },
+    "pdf-excel-diff": {
+      "difficulty": "medium",
+      "category": "data-comparison",
+      "instruction_preview": "You are helping an HR department identify differences between its old employee records and the current database. The company previously saved employee data as a backup in a PDF file (`/root/employees_backup.pdf`). Since then, changes have been made to the current Excel file (`/root/employees_current.xlsx`), but these changes were not documented.\n\nYour task is to:\n\n1. Extract the employee table from the old PDF file.\n2. Compare it with the current Excel file.\n3. Identify: (1) which employees (by ",
+      "skills": {
+        "pdf": {
+          "has_skill_md": true,
+          "scripts": [
+            "scripts\\check_bounding_boxes.py",
+            "scripts\\check_bounding_boxes_test.py",
+            "scripts\\check_fillable_fields.py",
+            "scripts\\convert_pdf_to_images.py",
+            "scripts\\create_validation_image.py",
+            "scripts\\extract_form_field_info.py",
+            "scripts\\fill_fillable_fields.py",
+            "scripts\\fill_pdf_form_with_annotations.py"
+          ],
+          "references": [],
+          "other_files": [
+            "forms.md",
+            "LICENSE.txt",
+            "reference.md"
+          ]
+        },
+        "xlsx": {
+          "has_skill_md": true,
+          "scripts": [],
+          "references": [],
+          "other_files": [
+            "LICENSE.txt",
+            "recalc.py"
+          ]
+        }
+      },
+      "skill_names": [
+        "pdf",
+        "xlsx"
+      ],
+      "total_scripts": 8
+    },
+    "pedestrian-traffic-counting": {
+      "difficulty": "hard",
+      "category": "pedestrian traffic counting",
+      "instruction_preview": "## Task description\n\nIn /app/video, I provide a set of videos from surveillance camera videos that are positioned at a public street with pedestrians walking.\n\nRead all video files under the given path. For each video, count the number of pedestrians in the video, and write the number into an excel file `/app/video/count.xlsx`.\n\nIf a pedestrian appears in multiple frames of the video, you should only count it as one. \n\nThe output file should only contain one sheet called \"results\". It should hav",
+      "skills": {
+        "gemini-count-in-video": {
+          "has_skill_md": true,
+          "scripts": [],
+          "references": [],
+          "other_files": []
+        },
+        "gemini-video-understanding": {
+          "has_skill_md": true,
+          "scripts": [],
+          "references": [],
+          "other_files": []
+        },
+        "gpt-multimodal": {
+          "has_skill_md": true,
+          "scripts": [],
+          "references": [],
+          "other_files": []
+        },
+        "video-frame-extraction": {
+          "has_skill_md": true,
+          "scripts": [],
+          "references": [],
+          "other_files": []
+        }
+      },
+      "skill_names": [
+        "gemini-count-in-video",
+        "gemini-video-understanding",
+        "gpt-multimodal",
+        "video-frame-extraction"
+      ],
+      "total_scripts": 0
+    },
+    "pg-essay-to-audiobook": {
+      "difficulty": "medium",
+      "category": "speech-synthesis",
+      "instruction_preview": "Can you help me find some essays from paul graham's website, and turn them into an audio book using TTS?\n\nThe essays i want to listened are:\n- Do Things that don't scale\n- Founder mode\n\nYou should find them online and convert to audio using elevenlabs or openai TTS (api-keys are in the env), if these online services are not avilable to you, you should try some local TTS service.\n\nSave the output to `/root/audiobook.mp3`.\n",
+      "skills": {
+        "audiobook": {
+          "has_skill_md": true,
+          "scripts": [],
+          "references": [],
+          "other_files": []
+        },
+        "elevenlabs-tts": {
+          "has_skill_md": true,
+          "scripts": [],
+          "references": [],
+          "other_files": []
+        },
+        "gtts": {
+          "has_skill_md": true,
+          "scripts": [],
+          "references": [],
+          "other_files": []
+        },
+        "openai-tts": {
+          "has_skill_md": true,
+          "scripts": [],
+          "references": [],
+          "other_files": []
+        }
+      },
+      "skill_names": [
+        "audiobook",
+        "elevenlabs-tts",
+        "gtts",
+        "openai-tts"
+      ],
+      "total_scripts": 0
+    },
+    "powerlifting-coef-calc": {
+      "difficulty": "easy",
+      "category": "data-analysis",
+      "instruction_preview": "\nYou need to calculate the lifting scores for International Powerlifting Federation competitions in the file `/root/data/openipf.xlsx`.\nThe workbook contains two sheets:\n1. \"Data\" which contains all performance records of lifters,\n2. \"Dots\" which is empty for you to work on.\nThe entries for \"Data\" are documented in `/root/data/data-readme.md`.\n\nYou need to calculate the [Dots](https://powerliftpro.app/understanding-the-dots-score-in-powerlifting-a-comprehensive-guide/)\ncoefficients for each comp",
+      "skills": {
+        "powerlifting": {
+          "has_skill_md": true,
+          "scripts": [],
+          "references": [],
+          "other_files": []
+        },
+        "senior-data-scientist": {
+          "has_skill_md": true,
+          "scripts": [
+            "scripts\\experiment_designer.py",
+            "scripts\\feature_engineering_pipeline.py",
+            "scripts\\model_evaluation_suite.py"
+          ],
+          "references": [
+            "references\\experiment_design_frameworks.md",
+            "references\\feature_engineering_patterns.md",
+            "references\\statistical_methods_advanced.md"
+          ],
+          "other_files": []
+        },
+        "xlsx": {
+          "has_skill_md": true,
+          "scripts": [],
+          "references": [],
+          "other_files": [
+            "LICENSE.txt",
+            "recalc.py"
+          ]
+        }
+      },
+      "skill_names": [
+        "powerlifting",
+        "senior-data-scientist",
+        "xlsx"
+      ],
+      "total_scripts": 3
+    },
+    "pptx-reference-formatting": {
+      "difficulty": "medium\"  # easy, medium, hard",
+      "category": "office-suite",
+      "instruction_preview": "Help me detect all dangling paper titles in the slides `/root/Awesome-Agent-Papers.pptx`, and do the following\n- change the font type to Arial, font size to 16, font color to #989596, and disable bold if any\n- adjust the box width, so that each title in displayed in one line\n- put the title at the bottom center of each page\n- create a new slide at the end, put \"Reference\" as the slide title, and put all the paper titles within the body with auto-numbered bullet points (don't forget to remove dup",
+      "skills": {
+        "pptx": {
+          "has_skill_md": true,
+          "scripts": [
+            "ooxml\\scripts\\pack.py",
+            "ooxml\\scripts\\unpack.py",
+            "ooxml\\scripts\\validate.py",
+            "ooxml\\scripts\\validation\\base.py",
+            "ooxml\\scripts\\validation\\docx.py",
+            "ooxml\\scripts\\validation\\pptx.py",
+            "ooxml\\scripts\\validation\\redlining.py",
+            "ooxml\\scripts\\validation\\__init__.py",
+            "scripts\\html2pptx.js",
+            "scripts\\inventory.py",
+            "scripts\\rearrange.py",
+            "scripts\\replace.py",
+            "scripts\\thumbnail.py"
+          ],
+          "references": [],
+          "other_files": [
+            "html2pptx.md",
+            "LICENSE.txt",
+            "ooxml.md",
+            "ooxml\\schemas\\ecma\\fouth-edition\\opc-contentTypes.xsd",
+            "ooxml\\schemas\\ecma\\fouth-edition\\opc-coreProperties.xsd",
+            "ooxml\\schemas\\ecma\\fouth-edition\\opc-digSig.xsd",
+            "ooxml\\schemas\\ecma\\fouth-edition\\opc-relationships.xsd",
+            "ooxml\\schemas\\ISO-IEC29500-4_2016\\dml-chart.xsd",
+            "ooxml\\schemas\\ISO-IEC29500-4_2016\\dml-chartDrawing.xsd",
+            "ooxml\\schemas\\ISO-IEC29500-4_2016\\dml-diagram.xsd",
+            "ooxml\\schemas\\ISO-IEC29500-4_2016\\dml-lockedCanvas.xsd",
+            "ooxml\\schemas\\ISO-IEC29500-4_2016\\dml-main.xsd",
+            "ooxml\\schemas\\ISO-IEC29500-4_2016\\dml-picture.xsd",
+            "ooxml\\schemas\\ISO-IEC29500-4_2016\\dml-spreadsheetDrawing.xsd",
+            "ooxml\\schemas\\ISO-IEC29500-4_2016\\dml-wordprocessingDrawing.xsd",
+            "ooxml\\schemas\\ISO-IEC29500-4_2016\\pml.xsd",
+            "ooxml\\schemas\\ISO-IEC29500-4_2016\\shared-additionalCharacteristics.xsd",
+            "ooxml\\schemas\\ISO-IEC29500-4_2016\\shared-bibliography.xsd",
+            "ooxml\\schemas\\ISO-IEC29500-4_2016\\shared-commonSimpleTypes.xsd",
+            "ooxml\\schemas\\ISO-IEC29500-4_2016\\shared-customXmlDataProperties.xsd",
+            "ooxml\\schemas\\ISO-IEC29500-4_2016\\shared-customXmlSchemaProperties.xsd",
+            "ooxml\\schemas\\ISO-IEC29500-4_2016\\shared-documentPropertiesCustom.xsd",
+            "ooxml\\schemas\\ISO-IEC29500-4_2016\\shared-documentPropertiesExtended.xsd",
+            "ooxml\\schemas\\ISO-IEC29500-4_2016\\shared-documentPropertiesVariantTypes.xsd",
+            "ooxml\\schemas\\ISO-IEC29500-4_2016\\shared-math.xsd",
+            "ooxml\\schemas\\ISO-IEC29500-4_2016\\shared-relationshipReference.xsd",
+            "ooxml\\schemas\\ISO-IEC29500-4_2016\\sml.xsd",
+            "ooxml\\schemas\\ISO-IEC29500-4_2016\\vml-main.xsd",
+            "ooxml\\schemas\\ISO-IEC29500-4_2016\\vml-officeDrawing.xsd",
+            "ooxml\\schemas\\ISO-IEC29500-4_2016\\vml-presentationDrawing.xsd",
+            "ooxml\\schemas\\ISO-IEC29500-4_2016\\vml-spreadsheetDrawing.xsd",
+            "ooxml\\schemas\\ISO-IEC29500-4_2016\\vml-wordprocessingDrawing.xsd",
+            "ooxml\\schemas\\ISO-IEC29500-4_2016\\wml.xsd",
+            "ooxml\\schemas\\ISO-IEC29500-4_2016\\xml.xsd",
+            "ooxml\\schemas\\mce\\mc.xsd",
+            "ooxml\\schemas\\microsoft\\wml-2010.xsd",
+            "ooxml\\schemas\\microsoft\\wml-2012.xsd",
+            "ooxml\\schemas\\microsoft\\wml-2018.xsd",
+            "ooxml\\schemas\\microsoft\\wml-cex-2018.xsd",
+            "ooxml\\schemas\\microsoft\\wml-cid-2016.xsd",
+            "ooxml\\schemas\\microsoft\\wml-sdtdatahash-2020.xsd",
+            "ooxml\\schemas\\microsoft\\wml-symex-2015.xsd"
+          ]
+        }
+      },
+      "skill_names": [
+        "pptx"
+      ],
+      "total_scripts": 13
+    },
+    "protein-expression-analysis": {
+      "difficulty": "middle",
+      "category": "data-analysis",
+      "instruction_preview": "You'll be working with protein expression data from cancer cell line experiments. Open `protein_expression.xlsx` - it has two sheets: \"Task\" is where you'll do your work, and \"Data\" contains the raw expression values.\n\n## What's this about?\n\nWe have quantitative proteomics data from cancer cell lines comparing control vs treated conditions. Your job is to find which proteins show significant differences between the two groups.\n\n## Steps\n\n### 1. Pull the expression data\n\nThe Data sheet has expres",
+      "skills": {
+        "xlsx": {
+          "has_skill_md": true,
+          "scripts": [],
+          "references": [],
+          "other_files": [
+            "LICENSE.txt",
+            "recalc.py"
+          ]
+        }
+      },
+      "skill_names": [
+        "xlsx"
+      ],
+      "total_scripts": 0
+    },
+    "python-scala-translation": {
+      "difficulty": "medium",
+      "category": "Code Translation",
+      "instruction_preview": "# Python to Scala Code Translation\n\n'/root/Tokenizer.py' is a python code for data preparation, and you need to translate this code into Scala for processing massive data in distributed systems. You will need to make sure your Scala code follows the best practices and save your file in `/root/Tokenizer.scala`. Your Scala code  must have all classes and functions in the python code (i.e. TokenType, Token, BaseTokenizer, StringTokenizer, NumericTokenizer, TemporalTokenizer, UniversalTokenizer, Whi",
+      "skills": {
+        "python-scala-collections": {
+          "has_skill_md": true,
+          "scripts": [],
+          "references": [],
+          "other_files": []
+        },
+        "python-scala-functional": {
+          "has_skill_md": true,
+          "scripts": [],
+          "references": [],
+          "other_files": []
+        },
+        "python-scala-idioms": {
+          "has_skill_md": true,
+          "scripts": [],
+          "references": [],
+          "other_files": []
+        },
+        "python-scala-libraries": {
+          "has_skill_md": true,
+          "scripts": [],
+          "references": [],
+          "other_files": []
+        },
+        "python-scala-oop": {
+          "has_skill_md": true,
+          "scripts": [],
+          "references": [],
+          "other_files": []
+        },
+        "python-scala-syntax-mapping": {
+          "has_skill_md": true,
+          "scripts": [],
+          "references": [],
+          "other_files": []
+        }
+      },
+      "skill_names": [
+        "python-scala-collections",
+        "python-scala-functional",
+        "python-scala-idioms",
+        "python-scala-libraries",
+        "python-scala-oop",
+        "python-scala-syntax-mapping"
+      ],
+      "total_scripts": 0
+    },
+    "quantum-numerical-simulation": {
+      "difficulty": "medium",
+      "category": "quantum-simulation",
+      "instruction_preview": "Simulate an open Dicke model's behavior in steady state and calculate its cavity field Wigner function under 4 different loss cases and save result as CSV file.\n\nAn open Dicke model is composed of N identical two level system coupled with a cavity mode. Its Hamiltonian is:\n\n$$\nH=\\omega_{0}J_z + \\omega_{c}a^\\dagger a + g(a^\\dagger + a)(J_{+} + J_{-})\n$$\n\nFor making the calculation simple, you can assume the following parameters:\n\nN = 4 (Number of 2 level systems)\n$\\omega_{0}=\\omega_{c}=1$\n$g=2/\\s",
+      "skills": {
+        "qutip": {
+          "has_skill_md": true,
+          "scripts": [],
+          "references": [
+            "references\\advanced.md",
+            "references\\analysis.md",
+            "references\\core_concepts.md",
+            "references\\time_evolution.md",
+            "references\\visualization.md"
+          ],
+          "other_files": []
+        }
+      },
+      "skill_names": [
+        "qutip"
+      ],
+      "total_scripts": 0
+    },
+    "r2r-mpc-control": {
+      "difficulty": "medium",
+      "category": "control-systems",
+      "instruction_preview": "The task is designed for a 6-section Roll-to-Roll manufacturing line. You need to implement an MPC controller to control and make web tensions stable during section 3 roller changing from 20N to 44N at t=0.5. The simulator environment is r2r_simulator.py. Do not modify r2r_simulator.py. Controller must work with the original simulator.\n\n\nFirst, you need derive the linearized state-space model. Use the dynamics equations at the initial reference operating point. Then, design MPC controller. Third",
+      "skills": {
+        "finite-horizon-lqr": {
+          "has_skill_md": true,
+          "scripts": [],
+          "references": [],
+          "other_files": []
+        },
+        "integral-action-design": {
+          "has_skill_md": true,
+          "scripts": [],
+          "references": [],
+          "other_files": []
+        },
+        "mpc-horizon-tuning": {
+          "has_skill_md": true,
+          "scripts": [],
+          "references": [],
+          "other_files": []
+        },
+        "state-space-linearization": {
+          "has_skill_md": true,
+          "scripts": [],
+          "references": [],
+          "other_files": []
+        }
+      },
+      "skill_names": [
+        "finite-horizon-lqr",
+        "integral-action-design",
+        "mpc-horizon-tuning",
+        "state-space-linearization"
+      ],
+      "total_scripts": 0
+    },
+    "react-performance-debugging": {
+      "difficulty": "hard",
+      "category": "web-performance",
+      "instruction_preview": "There's an e-commerce website implemented in Next.js that is extremely slow and users keep complaining about it. Some scenarios that users have been complaining about:\n\n- Adding items to cart is slow\n- Compare page is extremely slow on load time\n- api responses are slower than expected\n\nYour job is to use best practices to assess the root cause of the performance issues and fix them. \nUse React and Next.js patterns and best practices and focus on API route optimization, budle size reduction and ",
+      "skills": {
+        "browser-testing": {
+          "has_skill_md": true,
+          "scripts": [],
+          "references": [],
+          "other_files": [
+            "measure-cls.ts",
+            "measure.ts"
+          ]
+        },
+        "react-best-practices": {
+          "has_skill_md": true,
+          "scripts": [],
+          "references": [],
+          "other_files": [
+            "AGENTS.md",
+            "metadata.json",
+            "README.md",
+            "rules\\advanced-event-handler-refs.md",
+            "rules\\advanced-use-latest.md",
+            "rules\\async-api-routes.md",
+            "rules\\async-defer-await.md",
+            "rules\\async-dependencies.md",
+            "rules\\async-parallel.md",
+            "rules\\async-suspense-boundaries.md",
+            "rules\\bundle-barrel-imports.md",
+            "rules\\bundle-conditional.md",
+            "rules\\bundle-defer-third-party.md",
+            "rules\\bundle-dynamic-imports.md",
+            "rules\\bundle-preload.md",
+            "rules\\client-event-listeners.md",
+            "rules\\client-swr-dedup.md",
+            "rules\\js-batch-dom-css.md",
+            "rules\\js-cache-function-results.md",
+            "rules\\js-cache-property-access.md",
+            "rules\\js-cache-storage.md",
+            "rules\\js-combine-iterations.md",
+            "rules\\js-early-exit.md",
+            "rules\\js-hoist-regexp.md",
+            "rules\\js-index-maps.md",
+            "rules\\js-length-check-first.md",
+            "rules\\js-min-max-loop.md",
+            "rules\\js-set-map-lookups.md",
+            "rules\\js-tosorted-immutable.md",
+            "rules\\rendering-activity.md",
+            "rules\\rendering-animate-svg-wrapper.md",
+            "rules\\rendering-conditional-render.md",
+            "rules\\rendering-content-visibility.md",
+            "rules\\rendering-hoist-jsx.md",
+            "rules\\rendering-hydration-no-flicker.md",
+            "rules\\rendering-svg-precision.md",
+            "rules\\rerender-defer-reads.md",
+            "rules\\rerender-dependencies.md",
+            "rules\\rerender-derived-state.md",
+            "rules\\rerender-functional-setstate.md",
+            "rules\\rerender-lazy-state-init.md",
+            "rules\\rerender-memo.md",
+            "rules\\rerender-transitions.md",
+            "rules\\server-after-nonblocking.md",
+            "rules\\server-cache-lru.md",
+            "rules\\server-cache-react.md",
+            "rules\\server-parallel-fetching.md",
+            "rules\\server-serialization.md",
+            "rules\\_sections.md",
+            "rules\\_template.md"
+          ]
+        }
+      },
+      "skill_names": [
+        "browser-testing",
+        "react-best-practices"
+      ],
+      "total_scripts": 0
+    },
+    "reserves-at-risk-calc": {
+      "difficulty": "medium",
+      "category": "financial-analysis",
+      "instruction_preview": "STEP 1: download global commodity excel database from https://www.imf.org/en/research/commodity-prices, extract gold price (US$ per troy ounce) and populate the data into \"Gold price\" sheet. Calculate the monthly log, 3-month volatility and 12-month volatility in the relevant column (column C D E). Go to sheet \"Answer\", fill in the four blanks in step 1. For 3-month and 12-month volatility, use the lastest data you get in \"Gold price\", for the 3-months annualized data, calculate it based on 3-mo",
+      "skills": {
+        "xlsx": {
+          "has_skill_md": true,
+          "scripts": [],
+          "references": [],
+          "other_files": [
+            "LICENSE.txt",
+            "recalc.py"
+          ]
+        }
+      },
+      "skill_names": [
+        "xlsx"
+      ],
+      "total_scripts": 0
+    },
+    "sales-pivot-analysis": {
+      "difficulty": "medium",
+      "category": "data-analysis",
+      "instruction_preview": "read through the population data in `/root/population.pdf` and income daya in `/root/income.xlsx` and create a new report called `/root/demographic_analysis.xlsx`\n\nthe new Excel file should contain four new pivot tables and five different sheets:\n\n1. \"Population by State\"\nThis sheet contains a pivot table with the following structure:\nRows: STATE\nValues: Sum of POPULATION_2023\n\n2. \"Earners by State\"\nThis sheet contains a pivot table with the following structure:\nRows: STATE\nValues: Sum of EARNER",
+      "skills": {
+        "pdf": {
+          "has_skill_md": true,
+          "scripts": [],
+          "references": [],
+          "other_files": []
+        },
+        "xlsx": {
+          "has_skill_md": true,
+          "scripts": [],
+          "references": [],
+          "other_files": []
+        }
+      },
+      "skill_names": [
+        "pdf",
+        "xlsx"
+      ],
+      "total_scripts": 0
+    },
+    "scheduling-email-assistant": {
+      "difficulty": "medium",
+      "category": "Scheduling",
+      "instruction_preview": "You need to read meeting schedule request emails from `/root/test_input.json` file and send a reply email with your proposed meeting time. You may check the folder `/root/auth/gmail/` and `/root/auth/calendar/` for authentication when accessing your calendar and sending emails.\n\n## Workflow\n1. Extract key information from meeting schedule request emails, such as meeting times/dates constraint and meeting duration\n2. Check your calendar to find compatible time, and select the earliest time slots ",
+      "skills": {
+        "constraint-parser": {
+          "has_skill_md": true,
+          "scripts": [],
+          "references": [],
+          "other_files": []
+        },
+        "gmail-skill": {
+          "has_skill_md": true,
+          "scripts": [
+            "scripts\\action-logger.js",
+            "scripts\\gmail-drafts.js",
+            "scripts\\gmail-every-paywall-cleanup.js",
+            "scripts\\gmail-filters.js",
+            "scripts\\gmail-forward.js",
+            "scripts\\gmail-labels.js",
+            "scripts\\gmail-read.js",
+            "scripts\\gmail-search.js",
+            "scripts\\gmail-send.js",
+            "scripts\\manage-accounts.js",
+            "scripts\\migrate-tokens.js",
+            "scripts\\auth\\auth-utils.js",
+            "scripts\\auth\\setup-oauth.js"
+          ],
+          "references": [],
+          "other_files": [
+            ".gitignore",
+            "package.json",
+            "README.md",
+            "docs\\google-cloud-setup.md"
+          ]
+        },
+        "google-calendar-skill": {
+          "has_skill_md": false,
+          "scripts": [
+            "scripts\\action-logger.js",
+            "scripts\\calendar-events-create.js",
+            "scripts\\calendar-events-delete.js",
+            "scripts\\calendar-events-get.js",
+            "scripts\\calendar-events-list.js",
+            "scripts\\calendar-events-quick.js",
+            "scripts\\calendar-events-respond.js",
+            "scripts\\calendar-events-update.js",
+            "scripts\\calendar-list.js",
+            "scripts\\manage-accounts.js",
+            "scripts\\migrate-tokens.js",
+            "scripts\\auth\\auth-utils.js",
+            "scripts\\auth\\setup-oauth.js"
+          ],
+          "references": [],
+          "other_files": [
+            ".gitignore",
+            "package.json",
+            "docs\\google-cloud-setup.md"
+          ]
+        }
+      },
+      "skill_names": [
+        "constraint-parser",
+        "gmail-skill",
+        "google-calendar-skill"
+      ],
+      "total_scripts": 26
+    },
+    "sec-financial-report": {
+      "difficulty": "hard",
+      "category": "finance",
+      "instruction_preview": "You are a financial analyst in hedge fund, your task is to analyze the activities of hedge funds in q3 2025 by compare it with q2 2025. The dataset is downloaded to `/root/2025-q2` and `/root/2025-q3` folders respectively.\n\nQuestions to be answered in this task:\n\n1. In Q3, what's the AUM of Renaissance Technologies founded by Jim Simons?\n\nTo answer this question, first you need to fuzzy search COVERPAGE using search term \"renaissance technologies\" and find the best match. This gives you the acce",
+      "skills": {
+        "13f-analyzer": {
+          "has_skill_md": true,
+          "scripts": [
+            "scripts\\holding_analysis.py",
+            "scripts\\one_fund_analysis.py"
+          ],
+          "references": [],
+          "other_files": []
+        },
+        "fuzzy-name-search": {
+          "has_skill_md": true,
+          "scripts": [
+            "scripts\\search_fund.py",
+            "scripts\\search_stock_cusip.py"
+          ],
+          "references": [],
+          "other_files": []
+        }
+      },
+      "skill_names": [
+        "13f-analyzer",
+        "fuzzy-name-search"
+      ],
+      "total_scripts": 4
+    },
+    "seismic-phase-picking": {
+      "difficulty": "hard",
+      "category": "seismology",
+      "instruction_preview": "You have 100 earthquake traces at `/root/data/`. Each file represents a trace recorded at a station.\n\nYour task is seismic phase picking i.e. picking the arrival time of primary (P) waves and secondary (S) waves given a waveform. In particular, you will process the waveform data in each trace file to find index of P and S wave(s).\n\nA trace file contains three fields necessary for the task:\n1. `data`: seismic waveform data (12000 samples \u00d7 3 channels)\n2. `dt`: sampling interval (time step in seco",
+      "skills": {
+        "licenses": {
+          "has_skill_md": false,
+          "scripts": [],
+          "references": [],
+          "other_files": [
+            "obspy.LICENSE",
+            "seisbench.LICENSE"
+          ]
+        },
+        "obspy-data-api": {
+          "has_skill_md": true,
+          "scripts": [],
+          "references": [],
+          "other_files": []
+        },
+        "obspy-datacenter-client": {
+          "has_skill_md": true,
+          "scripts": [],
+          "references": [],
+          "other_files": [
+            "obspy-clients-fdsn.md"
+          ]
+        },
+        "seisbench-model-api": {
+          "has_skill_md": true,
+          "scripts": [],
+          "references": [],
+          "other_files": []
+        },
+        "seismic-picker-selection": {
+          "has_skill_md": true,
+          "scripts": [],
+          "references": [],
+          "other_files": []
+        }
+      },
+      "skill_names": [
+        "licenses",
+        "obspy-data-api",
+        "obspy-datacenter-client",
+        "seisbench-model-api",
+        "seismic-picker-selection"
+      ],
+      "total_scripts": 0
+    },
+    "setup-fuzzing-py": {
+      "difficulty": "medium",
+      "category": "security",
+      "instruction_preview": "You need to set up continuous fuzzing for some Python libraries.\nThe libraries are available in the current directory `/app/`.\n\nStep 1: The current working directory contains 5 libraries under test.\nList the path to them in `/app/libraries.txt`.\n\nStep 2: For each library under test in `libraries.txt`,\nyou should analyze the important functions for testing.\nThese functions under test should be written to `/app/<lib>/notes_for_testing.txt`.\nUse this file as a note for yourself to analyze this libr",
+      "skills": {
+        "discover-important-function": {
+          "has_skill_md": true,
+          "scripts": [],
+          "references": [],
+          "other_files": []
+        },
+        "fuzzing-python": {
+          "has_skill_md": true,
+          "scripts": [],
+          "references": [],
+          "other_files": []
+        },
+        "setup-env": {
+          "has_skill_md": true,
+          "scripts": [],
+          "references": [],
+          "other_files": []
+        }
+      },
+      "skill_names": [
+        "discover-important-function",
+        "fuzzing-python",
+        "setup-env"
+      ],
+      "total_scripts": 0
+    },
+    "shock-analysis-demand": {
+      "difficulty": "medium",
+      "category": "financial-analysis",
+      "instruction_preview": "This task is to estimate an investment spending shock to a small open economy (Georgia) using the macro accounting framework (demand side). The investment will last 8 years beginning from 2026, which worths 6.5 billion USD. You are going to collect the relevant data from country authority website and IMF WEO databases, populate data in test file, and test several scenarios in excel. You should ONLY use excel for this task (no python, no hardcoded numbers for the cells that needs calculation). Ke",
+      "skills": {
+        "xlsx": {
+          "has_skill_md": true,
+          "scripts": [],
+          "references": [],
+          "other_files": [
+            "LICENSE.txt",
+            "recalc.py"
+          ]
+        }
+      },
+      "skill_names": [
+        "xlsx"
+      ],
+      "total_scripts": 0
+    },
+    "shock-analysis-supply": {
+      "difficulty": "hard",
+      "category": "financial-analysis",
+      "instruction_preview": "This task is to estimate an investment spending shock to a small open economy (Georgia) using Cobb-Douglas production function to estimate the potential GDP. The investment will last 8 years beginning from 2026, which worths 6.5 billion USD. You are going to collect the relevant data from multiple online sources, populate data in test file, and run the model in excel. You should ONLY use excel for this task (no python, no hardcoded numbers for the cells that needs calculation). Keep all the form",
+      "skills": {
+        "xlsx": {
+          "has_skill_md": true,
+          "scripts": [],
+          "references": [],
+          "other_files": [
+            "LICENSE.txt",
+            "recalc.py"
+          ]
+        }
+      },
+      "skill_names": [
+        "xlsx"
+      ],
+      "total_scripts": 0
+    },
+    "simpo-code-reproduction": {
+      "difficulty": "hard",
+      "category": "code reproduction",
+      "instruction_preview": "You will reproduce a code repo for NLP papers.\n\nImplement the `simpo_loss` function of `SimPOTrainer` class in '/root/SimPO/scripts/simpo_trainer.py' based on the SimPO loss described in the paper located at /root/SimPO/paper.pdf. \n\nAfter you finished the code, please run the testing code located at '/root/SimPO/unit_test/unit_test_1.py' to generate loss for evaluation with fixed input tensors (In this way, we could verify the results and ensure the reproductivity.). I have provided fixed input ",
+      "skills": {
+        "nlp-research-repo-package-installment": {
+          "has_skill_md": true,
+          "scripts": [],
+          "references": [],
+          "other_files": []
+        },
+        "pdf": {
+          "has_skill_md": true,
+          "scripts": [
+            "scripts\\check_bounding_boxes.py",
+            "scripts\\check_bounding_boxes_test.py",
+            "scripts\\check_fillable_fields.py",
+            "scripts\\convert_pdf_to_images.py",
+            "scripts\\create_validation_image.py",
+            "scripts\\extract_form_field_info.py",
+            "scripts\\fill_fillable_fields.py",
+            "scripts\\fill_pdf_form_with_annotations.py"
+          ],
+          "references": [],
+          "other_files": [
+            "forms.md",
+            "LICENSE.txt",
+            "reference.md"
+          ]
+        }
+      },
+      "skill_names": [
+        "nlp-research-repo-package-installment",
+        "pdf"
+      ],
+      "total_scripts": 8
+    },
+    "software-dependency-audit": {
+      "difficulty": "medium",
+      "category": "security",
+      "instruction_preview": "You are a software security engineer. Given a dependency file, you need to perform a security audit to identify vulnerabilities in third-party dependencies.\n\nThe dependency file is given in `/root/package-lock.json`.\n\nYou can use offline tools or database.\n\nOnly detect the vulnerabilities with severity levels of HIGH and CRITICAL.\n\nFor each vulnerability, collect the following information:\n- Package name\n- Installed version\n- CVE ID\n- Severity level\n- CVSS score (e.g. from NVD, GHSA, or RedHat)\n",
+      "skills": {
+        "cvss-score-extraction": {
+          "has_skill_md": true,
+          "scripts": [],
+          "references": [],
+          "other_files": []
+        },
+        "trivy-offline-vulnerability-scanning": {
+          "has_skill_md": true,
+          "scripts": [],
+          "references": [],
+          "other_files": []
+        },
+        "vulnerability-csv-reporting": {
+          "has_skill_md": true,
+          "scripts": [],
+          "references": [],
+          "other_files": []
+        }
+      },
+      "skill_names": [
+        "cvss-score-extraction",
+        "trivy-offline-vulnerability-scanning",
+        "vulnerability-csv-reporting"
+      ],
+      "total_scripts": 0
+    },
+    "speaker-diarization-subtitles": {
+      "difficulty": "hard",
+      "category": "audio-visual",
+      "instruction_preview": "Perform diarization on `root/input.mp4` and generate 3 files\n- `/root/diarization.rttm` for diarization output,\n- `/root/subtitles.ass` for transcript from speakers. Use speaker labels in the format of `SPEAKER_00:transcripts`,\n- `/root/report.json` to include steps, commands, libraries, and tools that you succesfully used.\n\nExample format of all the files:\n\n- RTTM (`/root/diarization.rttm`)\n```\nSPEAKER input 1 0.804000 0.860000 <NA> <NA> spk00 <NA> <NA>\nSPEAKER input 1 23.820000 1.170000 <NA> <",
+      "skills": {
+        "automatic-speech-recognition": {
+          "has_skill_md": true,
+          "scripts": [],
+          "references": [],
+          "other_files": []
+        },
+        "multimodal-fusion": {
+          "has_skill_md": true,
+          "scripts": [],
+          "references": [],
+          "other_files": []
+        },
+        "speaker-clustering": {
+          "has_skill_md": true,
+          "scripts": [],
+          "references": [],
+          "other_files": []
+        },
+        "voice-activity-detection": {
+          "has_skill_md": true,
+          "scripts": [],
+          "references": [],
+          "other_files": []
+        }
+      },
+      "skill_names": [
+        "automatic-speech-recognition",
+        "multimodal-fusion",
+        "speaker-clustering",
+        "voice-activity-detection"
+      ],
+      "total_scripts": 0
+    },
+    "spring-boot-jakarta-migration": {
+      "difficulty": "hard",
+      "category": "Legacy Systems",
+      "instruction_preview": "Under the `/workspace/` folder, there is a legacy user management microservice that you need to migrate from Java 8/Spring Boot 2.7 to Java 21/Spring Boot 3.2. This microservice is based on REST API and manages user information. Key functions are: CRUD operations for user management, JWT-based authentication, Role-based access control, Database persistence with JPA/Hibernate, Input validation, and External API calls using RestTemplate.\n\nYou migration should upgrade Java version from 8 to 21, Spr",
+      "skills": {
+        "hibernate-upgrade": {
+          "has_skill_md": true,
+          "scripts": [],
+          "references": [],
+          "other_files": []
+        },
+        "jakarta-namespace": {
+          "has_skill_md": true,
+          "scripts": [],
+          "references": [],
+          "other_files": []
+        },
+        "restclient-migration": {
+          "has_skill_md": true,
+          "scripts": [],
+          "references": [],
+          "other_files": []
+        },
+        "spring-boot-migration": {
+          "has_skill_md": true,
+          "scripts": [],
+          "references": [],
+          "other_files": []
+        },
+        "spring-security-6": {
+          "has_skill_md": true,
+          "scripts": [],
+          "references": [],
+          "other_files": []
+        }
+      },
+      "skill_names": [
+        "hibernate-upgrade",
+        "jakarta-namespace",
+        "restclient-migration",
+        "spring-boot-migration",
+        "spring-security-6"
+      ],
+      "total_scripts": 0
+    },
+    "suricata-custom-exfil": {
+      "difficulty": "medium",
+      "category": "Security & CTF",
+      "instruction_preview": "You\u2019re investigating suspected data exfiltration hidden inside HTTP telemetry traffic.\n\nYou need to write Suricata signature(s) that alert on our custom exfil pattern, and avoid false positives.\n\nThe custom exfil pattern should alert only when all of the following are true:(1)HTTP `POST` request\n(2)Request path is exactly /telemetry/v2/report (3)Request header contains `X-TLM-Mode: exfil`\n(4)Body has blob= with a Base64-looking value \u2265 80 chars, and (5)Body has `sig=` with exactly 64 hex chars\n\n",
+      "skills": {
+        "pcap-triage-tshark": {
+          "has_skill_md": true,
+          "scripts": [
+            "scripts\\summarize_http_requests.sh"
+          ],
+          "references": [],
+          "other_files": []
+        },
+        "suricata-offline-evejson": {
+          "has_skill_md": true,
+          "scripts": [
+            "scripts\\run_suricata_offline.sh"
+          ],
+          "references": [],
+          "other_files": []
+        },
+        "suricata-rules-basics": {
+          "has_skill_md": true,
+          "scripts": [],
+          "references": [],
+          "other_files": []
+        }
+      },
+      "skill_names": [
+        "pcap-triage-tshark",
+        "suricata-offline-evejson",
+        "suricata-rules-basics"
+      ],
+      "total_scripts": 2
+    },
+    "syzkaller-ppdev-syzlang": {
+      "difficulty": "medium",
+      "category": "security",
+      "instruction_preview": "Write syzkaller syzlang support for the Linux parallel port driver (ppdev). Right now /dev/parport* isn\u2019t described.\n\nCreate:\n- /opt/syzkaller/sys/linux/dev_ppdev.txt\n- /opt/syzkaller/sys/linux/dev_ppdev.txt.const\n\nIn dev_ppdev.txt(syzlang descriptions), add:\n- include <linux/ppdev.h>\n- include <linux/parport.h>\n- resource fd_ppdev[fd]\n- an opener for /dev/parport# (syz_open_dev) that returns fd_ppdev\n- ioctl descriptions for all ppdev ioctls from linux/ppdev.h (23 total), with correct in/out ar",
+      "skills": {
+        "syz-extract-constants": {
+          "has_skill_md": true,
+          "scripts": [],
+          "references": [],
+          "other_files": []
+        },
+        "syzkaller-build-loop": {
+          "has_skill_md": true,
+          "scripts": [],
+          "references": [],
+          "other_files": []
+        },
+        "syzlang-ioctl-basics": {
+          "has_skill_md": true,
+          "scripts": [],
+          "references": [],
+          "other_files": []
+        }
+      },
+      "skill_names": [
+        "syz-extract-constants",
+        "syzkaller-build-loop",
+        "syzlang-ioctl-basics"
+      ],
+      "total_scripts": 0
+    },
+    "taxonomy-tree-merge": {
+      "difficulty": "hard",
+      "category": "ML/NLP",
+      "instruction_preview": "I need to unify product category taxonomies from three different e-commerce platforms (Amazon, Facebook, and Google Shopping). Each platform has its own way of classifying products, and we want to create one unified category catalog that works for all of them such that I can use one single category system for downstream works like tracking metrics of product category from multiple platforms!\n\nThe available data files are in /root/data/ as your input:\n- amazon_product_categories.csv\n- fb_product_",
+      "skills": {
+        "hierarchical-taxonomy-clustering": {
+          "has_skill_md": true,
+          "scripts": [
+            "scripts\\pipeline.py",
+            "scripts\\step1_preprocessing_and_merge.py",
+            "scripts\\step2_weighted_embedding_generation.py",
+            "scripts\\step3_recursive_clustering_naming.py",
+            "scripts\\step4_result_assignments.py"
+          ],
+          "references": [],
+          "other_files": []
+        }
+      },
+      "skill_names": [
+        "hierarchical-taxonomy-clustering"
+      ],
+      "total_scripts": 5
+    },
+    "threejs-structure-parser": {
+      "difficulty": "medium",
+      "category": "3d-graphics",
+      "instruction_preview": "You are a nice Three.js specialist. You are here to help engineers to understand a complex Three.js file that represents a 3D object. The file is located at `/root/data/object.js` and contains a single `createScene()` function that defines the 3D object.\n\nYour task is to parse this Three.js file to find the part-level structure of the defined 3D object. Then, you need to find each individual mesh defined directly by primitive functions as well as the part meshes defined by THREE.Group. Finally, ",
+      "skills": {
+        "obj-exporter": {
+          "has_skill_md": true,
+          "scripts": [],
+          "references": [],
+          "other_files": []
+        },
+        "threejs": {
+          "has_skill_md": true,
+          "scripts": [],
+          "references": [
+            "references\\joint-type-heuristics.md",
+            "references\\link-export-rules.md",
+            "references\\urdf-minimal.md"
+          ],
+          "other_files": [
+            "scripts\\build_urdf_from_scene.mjs",
+            "scripts\\export_instanced_obj.mjs",
+            "scripts\\export_link_objs.mjs"
+          ]
+        }
+      },
+      "skill_names": [
+        "obj-exporter",
+        "threejs"
+      ],
+      "total_scripts": 0
+    },
+    "threejs-to-obj": {
+      "difficulty": "medium",
+      "category": "3d-graphics",
+      "instruction_preview": "You are a helpful 3D programmer who can write scripts to convert the Three.js code into simulation-ready 3D assets that can be imported by Blender.\n\nThe three.js file is located at `/root/data/object.js` and contains a well-built 3D object represented by multiple functions from the three.js library.\n\nYour task is to write a javascript to export the defined 3D object to \".obj\" format (to `/root/output/object.obj`) and keep all the originally defined 3D positions. It's noted that output obj file m",
+      "skills": {
+        "obj-exporter": {
+          "has_skill_md": true,
+          "scripts": [],
+          "references": [],
+          "other_files": []
+        },
+        "threejs": {
+          "has_skill_md": true,
+          "scripts": [],
+          "references": [
+            "references\\joint-type-heuristics.md",
+            "references\\link-export-rules.md",
+            "references\\urdf-minimal.md"
+          ],
+          "other_files": [
+            "scripts\\build_urdf_from_scene.mjs",
+            "scripts\\export_instanced_obj.mjs",
+            "scripts\\export_link_objs.mjs"
+          ]
+        }
+      },
+      "skill_names": [
+        "obj-exporter",
+        "threejs"
+      ],
+      "total_scripts": 0
+    },
+    "travel-planning": {
+      "difficulty": "medium",
+      "category": "travel-planning",
+      "instruction_preview": "## Task\nBuild an itinerary for the user according to the following requirements:\n\"We require a 7-day travel itinerary for two leaving from Minneapolis and covering three cities in Ohio, starting from March 17th to March 23rd, 2022. Our budget is up to $5,100. We will be accompanied by our pets, so we need pet-friendly accommodations. Our meals should preferably include American, Mediterranean, Chinese, and Italian cuisines. Please note we prefer not to take any flights so our travel plan should ",
+      "skills": {
+        "search-accommodations": {
+          "has_skill_md": true,
+          "scripts": [
+            "scripts\\search_accommodations.py"
+          ],
+          "references": [],
+          "other_files": []
+        },
+        "search-attractions": {
+          "has_skill_md": true,
+          "scripts": [
+            "scripts\\search_attractions.py"
+          ],
+          "references": [],
+          "other_files": []
+        },
+        "search-cities": {
+          "has_skill_md": true,
+          "scripts": [
+            "scripts\\search_cities.py"
+          ],
+          "references": [],
+          "other_files": []
+        },
+        "search-driving-distance": {
+          "has_skill_md": true,
+          "scripts": [
+            "scripts\\search_driving_distance.py"
+          ],
+          "references": [],
+          "other_files": []
+        },
+        "search-flights": {
+          "has_skill_md": true,
+          "scripts": [
+            "scripts\\search_flights.py"
+          ],
+          "references": [],
+          "other_files": []
+        },
+        "search-restaurants": {
+          "has_skill_md": true,
+          "scripts": [
+            "scripts\\search_restaurants.py"
+          ],
+          "references": [],
+          "other_files": []
+        }
+      },
+      "skill_names": [
+        "search-accommodations",
+        "search-attractions",
+        "search-cities",
+        "search-driving-distance",
+        "search-flights",
+        "search-restaurants"
+      ],
+      "total_scripts": 6
+    },
+    "trend-anomaly-causal-inference": {
+      "difficulty": "hard",
+      "category": "data-science",
+      "instruction_preview": "I'm doing research on e-commerce data that consists of transaction data and demographic data.\n\nGoal: Identify which product categories showed anomalous daily sales patterns in March 2020 (assuming it as the time when an under-investing event began), and determine what demographic factors can explain these anomalies compared to the 2 months prior to this target window (January-February 2020, treated as baseline).\n\nYou have two datasets from an e-commerce company from 2019 to 2020:\n- Customer demo",
+      "skills": {
+        "data_cleaning": {
+          "has_skill_md": true,
+          "scripts": [
+            "scripts\\data_cleaning.py"
+          ],
+          "references": [],
+          "other_files": []
+        },
+        "did_causal_analysis": {
+          "has_skill_md": true,
+          "scripts": [
+            "scripts\\did_analysis.py"
+          ],
+          "references": [],
+          "other_files": []
+        },
+        "feature_engineering": {
+          "has_skill_md": true,
+          "scripts": [
+            "scripts\\feature_engineering.py"
+          ],
+          "references": [],
+          "other_files": []
+        },
+        "time_series_anomaly_detection": {
+          "has_skill_md": true,
+          "scripts": [
+            "scripts\\anomaly_detection.py"
+          ],
+          "references": [],
+          "other_files": []
+        }
+      },
+      "skill_names": [
+        "data_cleaning",
+        "did_causal_analysis",
+        "feature_engineering",
+        "time_series_anomaly_detection"
+      ],
+      "total_scripts": 4
+    },
+    "video-filler-word-remover": {
+      "difficulty": "medium",
+      "category": "media-processing",
+      "instruction_preview": "There is an interview video that's full of filler words. Please detect them and find their timestamps. The input video is at `/root/input.mp4`.\n\nDetect these filler words and phrases:\n- um, uh, hum, hmm, mhm\n- like\n- you know\n- i mean\n- yeah\n- so\n- kind of\n- basically\n- I guess\n- well\n- okay\n\nAfter detecting the filler words, you need to save the result to `/root/annotations.json` as a JSON array. Make sure each element have `word` for the filler word detected and its `timestamp` in seconds.\n\nFo",
+      "skills": {
+        "ffmpeg-video-editing": {
+          "has_skill_md": true,
+          "scripts": [],
+          "references": [],
+          "other_files": []
+        },
+        "filler-word-processing": {
+          "has_skill_md": true,
+          "scripts": [],
+          "references": [],
+          "other_files": []
+        },
+        "whisper-transcription": {
+          "has_skill_md": true,
+          "scripts": [],
+          "references": [],
+          "other_files": []
+        }
+      },
+      "skill_names": [
+        "ffmpeg-video-editing",
+        "filler-word-processing",
+        "whisper-transcription"
+      ],
+      "total_scripts": 0
+    },
+    "video-silence-remover": {
+      "difficulty": "hard",
+      "category": "media-processing",
+      "instruction_preview": "# Video Silence Remover Task\n\n## Objective\n\nYou are provided with a teaching video around 10min. In this video, there are durations with silence and non-teaching content. For example:\n1. Opening\n2. Pause in the video\n\n\n## Input\n\n- **Video file**: data/input_video.mp4\n\n## Expected Output\n\nYou need to give the following files and put them under the current workspace\n\n1. **compressed_video.mp4**: The result video with silence clips removed.\n2. **compression_report.json**: This is the annotation jso",
+      "skills": {
+        "audio-extractor": {
+          "has_skill_md": true,
+          "scripts": [
+            "scripts\\extract_audio.py"
+          ],
+          "references": [],
+          "other_files": []
+        },
+        "energy-calculator": {
+          "has_skill_md": true,
+          "scripts": [
+            "scripts\\calc_energy.py"
+          ],
+          "references": [],
+          "other_files": []
+        },
+        "pause-detector": {
+          "has_skill_md": true,
+          "scripts": [
+            "scripts\\detect_pauses.py"
+          ],
+          "references": [],
+          "other_files": []
+        },
+        "report-generator": {
+          "has_skill_md": true,
+          "scripts": [
+            "scripts\\generate_report.py"
+          ],
+          "references": [],
+          "other_files": []
+        },
+        "segment-combiner": {
+          "has_skill_md": true,
+          "scripts": [
+            "scripts\\combine_segments.py"
+          ],
+          "references": [],
+          "other_files": []
+        },
+        "silence-detector": {
+          "has_skill_md": true,
+          "scripts": [
+            "scripts\\detect_silence.py"
+          ],
+          "references": [],
+          "other_files": []
+        },
+        "video-processor": {
+          "has_skill_md": true,
+          "scripts": [
+            "scripts\\process_video.py"
+          ],
+          "references": [],
+          "other_files": []
+        }
+      },
+      "skill_names": [
+        "audio-extractor",
+        "energy-calculator",
+        "pause-detector",
+        "report-generator",
+        "segment-combiner",
+        "silence-detector",
+        "video-processor"
+      ],
+      "total_scripts": 7
+    },
+    "video-tutorial-indexer": {
+      "difficulty": "hard",
+      "category": "multimodal-processing",
+      "instruction_preview": "There is a tutorial video at `/root/tutorial_video.mp4`. It's a 23-minute Blender floor plan tutorial. Find the start timestamp (in seconds) for each chapter listed below:\n\n1. What we'll do\n2. How we'll get there\n3. Getting a floor plan\n4. Getting started\n5. Basic Navigation\n6. Import your plan into Blender\n7. Basic transform operations\n8. Setting up the plan and units\n9. It all starts with a plane\n10. Scaling the plane to real dimensions\n11. Getting the plan in place\n12. Tracing the outline\n13.",
+      "skills": {
+        "speech-to-text": {
+          "has_skill_md": true,
+          "scripts": [
+            "scripts\\transcribe.py"
+          ],
+          "references": [],
+          "other_files": []
+        }
+      },
+      "skill_names": [
+        "speech-to-text"
+      ],
+      "total_scripts": 1
+    },
+    "virtualhome-agent-planning": {
+      "difficulty": "medium\"  # easy, medium, hard",
+      "category": "research",
+      "instruction_preview": "Solve tasks using PDDL (Planning Domain Definition Language). These planning tasks are taken from the problem suites of the International Planning Competitions (IPC). Planners control the ground traffic on airports. The largest instances in the test suites are realistic encodings of Munich airport.\n\nEach task has two input files: a PDDL domain file and a PDDL problem file. As a planning agent, you may need both of them. The domain and problem file paths for each task are specified the \"domain\" k",
+      "skills": {
+        "pddl-skills": {
+          "has_skill_md": true,
+          "scripts": [],
+          "references": [],
+          "other_files": [
+            "generate_plan.skill",
+            "load_problem.skill",
+            "save_plan.skill",
+            "validate.skill"
+          ]
+        }
+      },
+      "skill_names": [
+        "pddl-skills"
+      ],
+      "total_scripts": 0
+    },
+    "weighted-gdp-calc": {
+      "difficulty": "medium",
+      "category": "financial-analysis",
+      "instruction_preview": "You need to calculate the weighted mean of net exports as a percentage of GDP for the GCC in the file `gdp.xlsx`. The workbook contains two sheets: \"Task\" (where you will enter formulas) and \"Data\" (source data). Please work only within these existing sheets.\n\nStep 1: The data you need for this problem are located in sheet \"Data\", rows 21 to 40. Please use the VLOOKUP&MATCH, HLOOKUP&MATCH, XLOOKUP&MATCH, or INDEX&MATCH functions to fill in the data in the yellow cell ranges H12:L17, H19:L24, and",
+      "skills": {
+        "xlsx": {
+          "has_skill_md": true,
+          "scripts": [],
+          "references": [],
+          "other_files": [
+            "LICENSE.txt",
+            "recalc.py"
+          ]
+        }
+      },
+      "skill_names": [
+        "xlsx"
+      ],
+      "total_scripts": 0
+    },
+    "xlsx-recover-data": {
+      "difficulty": "medium",
+      "category": "spreadsheet",
+      "instruction_preview": "Recover missing values in an Excel file `nasa_budget_incomplete.xlsx`. Missing values are marked with \"???\". Analyze the relationships between sheets to determine the correct values and replace each \"???\" with the computed numeric value. Save as `nasa_budget_recovered.xlsx`\n",
+      "skills": {
+        "data-reconciliation": {
+          "has_skill_md": true,
+          "scripts": [],
+          "references": [],
+          "other_files": []
+        },
+        "xlsx": {
+          "has_skill_md": true,
+          "scripts": [],
+          "references": [],
+          "other_files": [
+            "LICENSE.txt",
+            "recalc.py"
+          ]
+        }
+      },
+      "skill_names": [
+        "data-reconciliation",
+        "xlsx"
+      ],
+      "total_scripts": 0
+    }
+  },
+  "shared_skills": {
+    "pdf": [
+      "court-form-filling",
+      "financial-modeling-qa",
+      "find-topk-similiar-chemicals",
+      "flink-query",
+      "invoice-fraud-detection",
+      "jpg-ocr-stat",
+      "latex-formula-extraction",
+      "organize-messy-files",
+      "paper-anonymizer",
+      "pdf-excel-diff",
+      "sales-pivot-analysis",
+      "simpo-code-reproduction"
+    ],
+    "licenses": [
+      "earthquake-phase-association",
+      "seismic-phase-picking"
+    ],
+    "obspy-data-api": [
+      "earthquake-phase-association",
+      "seismic-phase-picking"
+    ],
+    "seisbench-model-api": [
+      "earthquake-phase-association",
+      "seismic-phase-picking"
+    ],
+    "seismic-picker-selection": [
+      "earthquake-phase-association",
+      "seismic-phase-picking"
+    ],
+    "power-flow-data": [
+      "energy-ac-optimal-power-flow",
+      "energy-market-pricing",
+      "grid-dispatch-operator"
+    ],
+    "dc-power-flow": [
+      "energy-market-pricing",
+      "grid-dispatch-operator"
+    ],
+    "economic-dispatch": [
+      "energy-market-pricing",
+      "grid-dispatch-operator"
+    ],
+    "pptx": [
+      "exceltable-in-ppt",
+      "organize-messy-files",
+      "pptx-reference-formatting"
+    ],
+    "xlsx": [
+      "exceltable-in-ppt",
+      "financial-modeling-qa",
+      "invoice-fraud-detection",
+      "jpg-ocr-stat",
+      "pdf-excel-diff",
+      "powerlifting-coef-calc",
+      "protein-expression-analysis",
+      "reserves-at-risk-calc",
+      "sales-pivot-analysis",
+      "shock-analysis-demand",
+      "shock-analysis-supply",
+      "weighted-gdp-calc",
+      "xlsx-recover-data"
+    ],
+    "browser-testing": [
+      "fix-visual-stability",
+      "react-performance-debugging"
+    ],
+    "react-best-practices": [
+      "fix-visual-stability",
+      "react-performance-debugging"
+    ],
+    "video-frame-extraction": [
+      "jpg-ocr-stat",
+      "pedestrian-traffic-counting"
+    ],
+    "ffmpeg-video-editing": [
+      "multilingual-video-dubbing",
+      "video-filler-word-remover"
+    ],
+    "docx": [
+      "offer-letter-generator",
+      "organize-messy-files"
+    ],
+    "pddl-skills": [
+      "pddl-tpp-planning",
+      "virtualhome-agent-planning"
+    ],
+    "obj-exporter": [
+      "threejs-structure-parser",
+      "threejs-to-obj"
+    ],
+    "threejs": [
+      "threejs-structure-parser",
+      "threejs-to-obj"
+    ]
+  }
+}
