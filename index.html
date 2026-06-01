@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="SkillHarm: Lifecycle-Aware Skill-Based Attacks via Automated Construction. A benchmark of skill-based attacks across the agent skill-use lifecycle with a 12-risk taxonomy and an automated attack-construction pipeline (AutoSkillHarm).">
+  <meta name="keywords" content="AI safety, agent safety, agent skills, skill poisoning, red teaming, benchmark, AutoSkillHarm, SkillHarm">
+  <meta property="og:title" content="SkillHarm: Lifecycle-Aware Skill-Based Attacks via Automated Construction">
+  <meta property="og:description" content="A benchmark of skill-based attacks across the agent skill-use lifecycle, with 12 risk types and an automated construction pipeline (AutoSkillHarm).">
+  <meta property="og:image" content="static/images/SkillHarm.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <title>SkillHarm: Lifecycle-Aware Skill-Based Attacks via Automated Construction</title>
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="static/css/style.css">
+</head>
+<body>
+
+<!-- ===================== HERO ===================== -->
+<section class="hero">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+          <h1 class="title is-1 publication-title">
+            <span class="skillharm-mark">S<small class="sc">kill</small>H<small class="sc">arm</small></span>: Lifecycle-Aware Skill-Based Attacks via Automated Construction
+          </h1>
+
+          <div class="is-size-5 publication-authors">
+            <span class="author-block"><a href="#">Yuting Ning</a><sup>1*</sup>,</span>
+            <span class="author-block"><a href="#">Zhehao Zhang</a><sup>1*</sup>,</span>
+            <span class="author-block"><a href="#">Yash Kumar Lal</a><sup>1</sup>,</span>
+            <span class="author-block"><a href="#">Boyu Gou</a><sup>1</sup>,</span>
+            <span class="author-block"><a href="#">Junyi Li</a><sup>1</sup>,</span>
+            <span class="author-block"><a href="#">Weitong Ruan</a><sup>2</sup>,</span>
+            <span class="author-block"><a href="#">Chentao Ye</a><sup>2</sup>,</span>
+            <span class="author-block"><a href="#">Rahul Gupta</a><sup>2</sup>,</span>
+            <span class="author-block"><a href="#">Diyi Yang</a><sup>3</sup>,</span>
+            <span class="author-block"><a href="#">Yu Su</a><sup>1</sup>,</span>
+            <span class="author-block"><a href="#">Huan Sun</a><sup>1</sup></span>
+          </div>
+
+          <div class="is-size-6 publication-affiliations">
+            <span class="affiliation-block"><sup>1</sup>The Ohio State University</span>
+            <span class="affiliation-block"><sup>2</sup>Amazon AGI</span>
+            <span class="affiliation-block"><sup>3</sup>Stanford University</span>
+          </div>
+          <div class="is-size-7 publication-equal-contrib">
+            <sup>*</sup>Equal Contribution
+          </div>
+
+          <div class="publication-links">
+            <span class="link-block">
+              <a href="" target="_blank" class="external-link button is-normal is-rounded is-dark">
+                <span class="icon"><i class="ai ai-arxiv"></i></span>
+                <span>arXiv</span>
+              </a>
+            </span>
+            <span class="link-block">
+              <a href="https://github.com/OSU-NLP-Group/SkillHarm" target="_blank" class="external-link button is-normal is-rounded is-dark">
+                <span class="icon"><i class="fab fa-github"></i></span>
+                <span>Code</span>
+              </a>
+            </span>
+            <span class="link-block">
+              <a href="" target="_blank" class="external-link button is-normal is-rounded is-dark">
+                <span class="icon"><i class="fas fa-database"></i></span>
+                <span>Data</span>
+              </a>
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== TEASER ===================== -->
+<section class="section teaser">
+  <div class="container is-max-desktop">
+    <figure class="image teaser-image">
+      <img src="static/images/SkillHarm.png" alt="SkillHarm: two attack scenarios — Fixed-Payload Poisoning and Self-Mutating Poisoning.">
+    </figure>
+    <p class="figure-caption">
+      <strong>Figure 1.</strong> The two attack scenarios in <span class="skillharm-mark-sm">SkillHarm</span>. In <strong>Fixed-Payload Poisoning</strong>, a poisoned skill directly triggers a harmful outcome during a single task execution. In <strong>Self-Mutating Poisoning</strong>, an initial task executes harmlessly but silently mutates the skill package, compromising a subsequent task upon reuse.
+    </p>
+  </div>
+</section>
+
+<!-- ===================== ABSTRACT ===================== -->
+<section class="section abstract-section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Abstract</h2>
+      </div>
+    </div>
+    <div class="columns is-centered">
+      <div class="column is-four-fifths">
+        <div class="content has-text-justified">
+          <p>
+            Agent skills occupy a privileged position in the agent workflow, as agents are expected to implicitly follow and execute them, rendering third-party skills a vulnerable attack surface. Existing studies have revealed unsafe agent behaviors induced by skill-based attacks, but they primarily evaluate poisoned skills within a single task execution and enumerate harms through ad-hoc risk lists. To bridge these gaps, <strong>we introduce <span class="skillharm-mark-sm">SkillHarm</span>, a benchmark of skill-based attacks across the skill-use lifecycle, paired with a systematic taxonomy of skill-relevant risks</strong>. <span class="skillharm-mark-sm">SkillHarm</span> evaluates two attack scenarios: <strong>Fixed-Payload Poisoning (FPP)</strong>, where a fixed poisoned skill package directly compromises any task session that invokes it, and <strong>Self-Mutating Poisoning (SMP)</strong>, where an initially benign execution silently mutates persistent skill content, deferring harm until a subsequent reuse. It further defines <strong>12 risk types</strong> based on the agent workflow component targeted by the harm: data pipelines, system environments, and agent autonomy. To instantiate these attacks at scale, <strong>we build <span class="autoskillharm-mark-sm">AutoSkillHarm</span>, an automated construction pipeline with coding agents driven by natural-language harnesses</strong>. The resulting benchmark contains <strong>879 attack samples across 71 skills</strong>. Experiments show that current agents remain vulnerable with attack success rates up to <strong>86.3% in FPP</strong> and <strong>69.3% in SMP</strong>. Our analysis further reveals a latent risk: many apparent attack failures stem from the agent failing to engage with the poisoned file rather than from genuine resistance, and current defenses still fail to reliably mitigate the threat.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== ATTACK SCENARIOS ===================== -->
+<section class="section">
+  <div class="container is-max-desktop">
+    <h2 class="title is-3 has-text-centered">Attack Scenarios</h2>
+    <div class="columns scenario-columns">
+      <div class="column">
+        <div class="scenario-card">
+          <h3 class="title is-5">Fixed-Payload Poisoning <span class="tag is-dark">FPP</span></h3>
+          <p>
+            The attacker publishes a skill whose malicious payload is present at installation and remains fixed thereafter. The payload may live in <code>SKILL.md</code>, reference documents, helper scripts, or attacker-added artifacts. When an agent invokes the poisoned skill for a relevant task, the payload can realize the harmful outcome within that same session.
+          </p>
+          <p class="scenario-takeaway">
+            <em>Captures direct single-session compromise.</em>
+          </p>
+        </div>
+      </div>
+      <div class="column">
+        <div class="scenario-card">
+          <h3 class="title is-5">Self-Mutating Poisoning <span class="tag is-dark">SMP</span></h3>
+          <p>
+            The skill contains a mutation hook rather than an immediately harmful payload. The first session using the skill appears harmless, while silently modifying persistent skill content. The harmful outcome materializes only when a later session reuses the modified skill.
+          </p>
+          <p class="scenario-takeaway">
+            <em>Exposes a failure mode single-session evaluations cannot observe.</em>
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== PIPELINE ===================== -->
+<section class="section pipeline-section">
+  <div class="container is-max-desktop">
+    <h2 class="title is-3 has-text-centered"><span class="autoskillharm-mark-sm">AutoSkillHarm</span>: Automated Attack Construction</h2>
+    <p class="section-intro has-text-centered">
+      A coding agent drives three sequential stages, each specified by a <strong>natural-language harness</strong> that defines stage inputs, objectives, constraints, required outputs, and review criteria.
+    </p>
+    <figure class="image">
+      <img src="static/images/AutoSkillHarm.png" alt="AutoSkillHarm pipeline: target selection, attack design, quality filter.">
+    </figure>
+    <p class="figure-caption">
+      <strong>Figure 2.</strong> Overview of <span class="autoskillharm-mark-sm">AutoSkillHarm</span>. <strong>Target selection</strong> identifies reachable attack targets; <strong>attack design</strong> generates contextualized payloads with deterministic evaluators; <strong>quality filtering</strong> removes invalid candidates.
+    </p>
+  </div>
+</section>
+
+<!-- ===================== RISK TAXONOMY ===================== -->
+<section class="section taxonomy-section">
+  <div class="container is-max-desktop">
+    <h2 class="title is-3 has-text-centered">Risk Taxonomy</h2>
+    <p class="section-intro has-text-centered">
+      12 risk types organized by the agent workflow component through which harm materializes.
+    </p>
+    <div class="columns taxonomy-columns">
+      <div class="column">
+        <div class="taxonomy-card">
+          <h3 class="title is-5">Data Pipeline Exploitation</h3>
+          <ul>
+            <li><strong>Data Exfiltration.</strong> Disclose sensitive or private data to an external destination.</li>
+            <li><strong>Output Manipulation.</strong> Alter a user-facing deliverable to be false, biased, or misleading.</li>
+            <li><strong>Poisoning.</strong> Contaminate trusted data or configuration.</li>
+          </ul>
+        </div>
+      </div>
+      <div class="column">
+        <div class="taxonomy-card">
+          <h3 class="title is-5">System Environment Exploitation</h3>
+          <ul>
+            <li><strong>Privilege Escalation.</strong> Weaken access controls on a protected file or directory.</li>
+            <li><strong>Unauthorized File Mod.</strong> Modify, delete, or encrypt out-of-scope user or system files.</li>
+            <li><strong>Backdoor Injection.</strong> Create persistent unauthorized access or hidden execution.</li>
+            <li><strong>Denial of Service.</strong> Plant a persistent disruption to degrade system availability.</li>
+            <li><strong>Malware Deployment.</strong> Download and install malicious payloads.</li>
+            <li><strong>System Corruption.</strong> Corrupt trusted system, tool, network, or runtime configuration.</li>
+          </ul>
+        </div>
+      </div>
+      <div class="column">
+        <div class="taxonomy-card">
+          <h3 class="title is-5">Agent Autonomy Exploitation</h3>
+          <ul>
+            <li><strong>Goal Hijacking.</strong> Divert the agent from the user's task to an unrelated objective.</li>
+            <li><strong>Anti-Forensics.</strong> Remove or alter evidence of prior malicious activity.</li>
+            <li><strong>Proxy Attack.</strong> Send attacker-authored content to a third party via agent authority.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== RESULTS ===================== -->
+<section class="section results-section">
+  <div class="container is-max-desktop">
+    <h2 class="title is-3 has-text-centered">Headline Results</h2>
+    <div class="columns is-centered results-columns">
+      <div class="column is-one-quarter">
+        <div class="result-card">
+          <div class="result-number">879</div>
+          <div class="result-label">attack samples</div>
+        </div>
+      </div>
+      <div class="column is-one-quarter">
+        <div class="result-card">
+          <div class="result-number">71</div>
+          <div class="result-label">skills covered</div>
+        </div>
+      </div>
+      <div class="column is-one-quarter">
+        <div class="result-card">
+          <div class="result-number">86.3%</div>
+          <div class="result-label">peak ASR (FPP)</div>
+        </div>
+      </div>
+      <div class="column is-one-quarter">
+        <div class="result-card">
+          <div class="result-number">69.3%</div>
+          <div class="result-label">peak ASR (SMP)</div>
+        </div>
+      </div>
+    </div>
+    <div class="columns is-centered">
+      <div class="column is-four-fifths">
+        <p class="content has-text-justified">
+          Across six representative model-harness configurations spanning four agent harnesses (Claude Code, Codex, Gemini CLI, OpenCode), current agents remain highly vulnerable. Our analysis further surfaces a <strong>latent risk</strong>: many apparent failures occur not because the agent resists the attack, but because it never engages the poisoned file. Conditional on engagement, ASR rises sharply. Explicit refusal is rare across all evaluated agents, and standard defenses — skill scanners and defensive system prompts — fail to reliably mitigate the threat.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== BIBTEX ===================== -->
+<section class="section bibtex-section" id="bibtex">
+  <div class="container is-max-desktop">
+    <h2 class="title is-3">BibTeX</h2>
+    <div class="bibtex-wrapper">
+      <button class="button is-small is-light bibtex-copy" data-copy-target="bibtex-code">
+        <span class="icon"><i class="fas fa-copy"></i></span>
+        <span>Copy</span>
+      </button>
+      <pre><code id="bibtex-code">@article{ning2026skillharm,
+  title  = {SkillHarm: Lifecycle-Aware Skill-Based Attacks via Automated Construction},
+  author = {Ning, Yuting and Zhang, Zhehao and Lal, Yash Kumar and Gou, Boyu
+            and Li, Junyi and Ruan, Weitong and Ye, Chentao and Gupta, Rahul
+            and Yang, Diyi and Su, Yu and Sun, Huan},
+  year   = {2026}
+}</code></pre>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== FOOTER ===================== -->
+<footer class="footer">
+  <div class="container is-max-desktop">
+    <div class="content has-text-centered">
+      <p class="acknowledgments">
+        <strong>Acknowledgments.</strong>
+        <span class="autoskillharm-mark-sm">AutoSkillHarm</span> builds on
+        <a href="https://github.com/laude-institute/harbor" target="_blank">Harbor</a>
+        for containerized agent-task execution and the
+        <a href="https://github.com/benchflow-ai/skillsbench" target="_blank">SkillsBench</a>
+        catalog as the benign task substrate.
+      </p>
+      <p class="template-credit">
+        Website template adapted from
+        <a href="https://nerfies.github.io/" target="_blank">Nerfies</a>.
+        Source available on
+        <a href="https://github.com/OSU-NLP-Group/SkillHarm/tree/gh-pages" target="_blank">GitHub</a>.
+      </p>
+    </div>
+  </div>
+</footer>
+
+<script src="static/js/index.js"></script>
+</body>
+</html>
