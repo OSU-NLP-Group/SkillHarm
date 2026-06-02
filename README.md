@@ -1,10 +1,11 @@
 # SkillHarm: Lifecycle-Aware Skill-Based Attacks via Automated Construction
 
 <p align="center">
-[<a href="">Website</a>] •
-[<a href="">Paper</a>] •
-[<a href="">Data</a>]
+[<a href="https://osu-nlp-group.github.io/SkillHarm/">Website</a>] •
+[<a href="https://arxiv.org/abs/2606.02540">Paper</a>] •
+[<a href="https://huggingface.co/datasets/osunlp/SkillHarm">Data</a>]
 </p>
+
 
 ---
 
@@ -181,6 +182,7 @@ If you find this work useful, please consider starring our repo and citing our p
   author = {Ning, Yuting and Zhang, Zhehao and Lal, Yash Kumar and Gou, Boyu
             and Li, Junyi and Ruan, Weitong and Ye, Chentao and Gupta, Rahul
             and Yang, Diyi and Su, Yu and Sun, Huan},
+  journal={arXiv preprint arXiv:2606.02540},
   year   = {2026}
 }
 ```
