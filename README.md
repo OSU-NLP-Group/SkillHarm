@@ -178,11 +178,14 @@ If you find this work useful, please consider starring our repo and citing our p
 
 ```bibtex
 @article{ning2026skillharm,
-  title  = {SkillHarm: Lifecycle-Aware Skill-Based Attacks via Automated Construction},
-  author = {Ning, Yuting and Zhang, Zhehao and Lal, Yash Kumar and Gou, Boyu
-            and Li, Junyi and Ruan, Weitong and Ye, Chentao and Gupta, Rahul
-            and Yang, Diyi and Su, Yu and Sun, Huan},
-  journal={arXiv preprint arXiv:2606.02540},
-  year   = {2026}
+  title         = {SkillHarm: Lifecycle-Aware Skill-Based Attacks via Automated Construction},
+  author        = {Ning, Yuting and Zhang, Zhehao and Lal, Yash Kumar and Gou, Boyu
+                   and Li, Junyi and Ruan, Weitong and Ye, Chentao and Gupta, Rahul
+                   and Yang, Diyi and Su, Yu and Sun, Huan},
+  journal       = {arXiv preprint arXiv:2606.02540},
+  year          = {2026},
+  eprint        = {2606.02540},
+  archivePrefix = {arXiv},
+  primaryClass  = {cs.CL}
 }
 ```
