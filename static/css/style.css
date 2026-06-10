@@ -714,3 +714,330 @@ h1, h2, h3, h4, h5 {
 
 .compare-table td.name a { font-weight: 400; border-bottom: 1px solid transparent; }
 .compare-table td.name a:hover { border-bottom-color: currentColor; }
+
+/* ========================================================================
+   ✦ VISUAL POLISH LAYER ✦
+   "Security research dossier" — cohesive technical aesthetic.
+   Purely presentational; no content is altered.
+   ======================================================================== */
+
+:root {
+  --font-display: 'Archivo', 'Google Sans', sans-serif;
+  --font-mono: 'JetBrains Mono', 'SFMono-Regular', Menlo, Consolas, monospace;
+  --sh-accent-bright: #dc2626;
+  --sh-surface-dark: #0b1120;
+  --sh-grid: rgba(15, 23, 42, 0.05);
+  --sh-blue: #1d4ed8;
+}
+
+/* ---- Display headings everywhere ---- */
+.title, .subtitle, .publication-title,
+h1, h2, h3, h4, h5 { font-family: var(--font-display); }
+
+/* ---- Section headers: tighter, with an accent rule ---- */
+.section .title.is-3 {
+  font-weight: 700;
+  font-size: clamp(1.7rem, 3.4vw, 2.1rem);
+  letter-spacing: -0.02em;
+  position: relative;
+  margin-bottom: 1rem;
+}
+.section .title.is-3.has-text-centered::after {
+  content: "";
+  display: block;
+  width: 46px; height: 3px;
+  margin: 0.85rem auto 0;
+  background: linear-gradient(90deg, var(--skillharm-accent), #ef4444);
+  border-radius: 2px;
+}
+.section-intro { font-size: 0.98rem; }
+
+/* ========================================================================
+   Hero — atmosphere + orchestrated load
+   ======================================================================== */
+.hero {
+  position: relative;
+  overflow: hidden;
+  padding-top: 4.25rem;
+  padding-bottom: 2.5rem;
+}
+/* technical dot-grid + soft danger glow */
+.hero::before {
+  content: "";
+  position: absolute; inset: 0;
+  background:
+    radial-gradient(circle at 50% 8%, rgba(220, 38, 38, 0.07), transparent 42%),
+    radial-gradient(var(--sh-grid) 1px, transparent 1.4px);
+  background-size: auto, 22px 22px;
+  -webkit-mask-image: radial-gradient(ellipse 80% 75% at 50% 30%, #000 55%, transparent 100%);
+  mask-image: radial-gradient(ellipse 80% 75% at 50% 30%, #000 55%, transparent 100%);
+  pointer-events: none;
+  z-index: 0;
+}
+.hero .hero-body { position: relative; z-index: 1; }
+
+.publication-title {
+  font-size: clamp(1.9rem, 4.6vw, 2.7rem) !important;
+  letter-spacing: -0.025em;
+  line-height: 1.18;
+}
+.publication-title .skillharm-mark { letter-spacing: 0; }
+
+/* link bar buttons → refined dossier pills */
+.publication-links .link-block .button {
+  border-radius: 9px;
+  font-family: var(--font-display);
+  font-weight: 600;
+  letter-spacing: 0.01em;
+  padding-left: 1.15rem; padding-right: 1.15rem;
+  transition: transform 0.18s ease, background-color 0.18s ease,
+              border-color 0.18s ease, box-shadow 0.18s ease;
+}
+.publication-links .link-block .button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 22px -10px rgba(185, 28, 28, 0.55);
+}
+
+/* staggered entrance (skipped if reduced motion / no JS guard) */
+@media (prefers-reduced-motion: no-preference) {
+  .js-anim .hero .publication-title,
+  .js-anim .hero .publication-authors,
+  .js-anim .hero .publication-affiliations,
+  .js-anim .hero .publication-equal-contrib,
+  .js-anim .hero .publication-links {
+    opacity: 0;
+    animation: sh-rise 0.7s cubic-bezier(0.16, 0.84, 0.44, 1) forwards;
+  }
+  .js-anim .hero .publication-title        { animation-delay: 0.05s; }
+  .js-anim .hero .publication-authors      { animation-delay: 0.18s; }
+  .js-anim .hero .publication-affiliations { animation-delay: 0.28s; }
+  .js-anim .hero .publication-equal-contrib{ animation-delay: 0.34s; }
+  .js-anim .hero .publication-links        { animation-delay: 0.42s; }
+}
+@keyframes sh-rise {
+  from { opacity: 0; transform: translateY(16px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ========================================================================
+   Scroll reveal for below-fold sections
+   ======================================================================== */
+@media (prefers-reduced-motion: no-preference) {
+  .js-anim .reveal {
+    opacity: 0;
+    transform: translateY(22px);
+    transition: opacity 0.6s ease, transform 0.6s cubic-bezier(0.16, 0.84, 0.44, 1);
+    will-change: opacity, transform;
+  }
+  .js-anim .reveal.in-view { opacity: 1; transform: none; }
+}
+
+/* ========================================================================
+   Sticky nav refinements
+   ======================================================================== */
+.site-nav-brand .skillharm-mark { transition: color 0.18s ease; }
+.nav-btn {
+  font-family: var(--font-display);
+  transition: transform 0.16s ease, border-color 0.16s ease,
+              color 0.16s ease, box-shadow 0.16s ease;
+}
+.nav-btn:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 6px 16px -10px rgba(15, 23, 42, 0.4);
+}
+#cite-toggle[aria-expanded="true"] {
+  border-color: var(--skillharm-accent);
+  color: var(--skillharm-accent);
+}
+
+/* ========================================================================
+   Teaser video — subtle framing
+   ======================================================================== */
+.teaser-video-figure { border-radius: 16px; }
+
+/* ========================================================================
+   Overview — technical key/value treatment
+   ======================================================================== */
+.overview-point {
+  padding: 0.15rem 0 0.15rem 1rem;
+  border-left: 2px solid var(--skillharm-border);
+  transition: border-color 0.2s ease;
+}
+.overview-point:hover { border-left-color: var(--skillharm-accent); }
+.overview-point .op-key {
+  font-family: var(--font-mono);
+  font-weight: 700;
+  font-size: 0.74rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: #111827;
+  padding-top: 0.1rem;
+}
+.overview-finding {
+  margin-top: 1.7rem;
+  padding: 1rem 1.15rem;
+  background: #fff;
+  border: 1px solid #fecaca;
+  border-left: 3px solid var(--skillharm-accent);
+  border-radius: 8px;
+}
+
+/* ========================================================================
+   Leaderboard — row hover + crisper headers
+   ======================================================================== */
+.leaderboard-scroll { box-shadow: 0 14px 34px -22px rgba(15, 23, 42, 0.28); }
+.leaderboard-table thead .group-row th.metric { font-family: var(--font-display); }
+.leaderboard-table th.metric[data-k] { font-family: var(--font-mono); }
+.leaderboard-table td.metric { font-family: var(--font-mono); font-size: 0.86rem; }
+.lb-model .model-name { font-family: var(--font-display); }
+.leaderboard-table tbody tr { transition: background-color 0.14s ease; }
+.leaderboard-table tbody tr:hover td { background-color: #fafbfc; }
+.leaderboard-table tbody tr:hover td.grp-fpp { background-color: rgba(220, 38, 38, 0.08); }
+.leaderboard-table tbody tr:hover td.grp-smp { background-color: rgba(37, 99, 235, 0.09); }
+
+/* ========================================================================
+   Key findings — marker list
+   ======================================================================== */
+.key-findings .title.is-5 {
+  font-family: var(--font-mono);
+  font-size: 0.78rem; letter-spacing: 0.08em; text-transform: uppercase;
+  color: var(--skillharm-accent);
+}
+.key-findings ul { list-style: none; margin-left: 0; }
+.key-findings li {
+  position: relative;
+  padding-left: 1.35rem;
+  margin-bottom: 0.7rem;
+}
+.key-findings li::before {
+  content: "›";
+  position: absolute; left: 0; top: -0.04em;
+  color: var(--skillharm-accent);
+  font-weight: 700; font-size: 1.05rem;
+}
+
+/* ========================================================================
+   Scenario cards — scenario-colored accent + lift
+   ======================================================================== */
+.scenario-card {
+  position: relative;
+  border-radius: 10px;
+  overflow: hidden;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+}
+.scenario-card::before {
+  content: "";
+  position: absolute; top: 0; left: 0; right: 0; height: 3px;
+}
+.scenario-columns .column:first-child .scenario-card::before { background: var(--skillharm-accent); }
+.scenario-columns .column:last-child  .scenario-card::before { background: var(--sh-blue); }
+.scenario-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 18px 38px -22px rgba(15, 23, 42, 0.35);
+  border-color: #d6dae0;
+}
+.scenario-card .title { font-size: 1.1rem; }
+
+/* ========================================================================
+   Example / diff blocks — terminal title bar
+   ======================================================================== */
+.example-card {
+  box-shadow: 0 14px 34px -24px rgba(15, 23, 42, 0.3);
+  transition: box-shadow 0.2s ease;
+}
+.example-card:hover { box-shadow: 0 20px 44px -24px rgba(15, 23, 42, 0.38); }
+.example-card .example-selector .select select {
+  font-family: var(--font-mono); font-size: 0.74rem;
+}
+.scenario-pill { font-family: var(--font-mono); }
+.ex-filename {
+  display: flex; align-items: center;
+  padding-left: 0.85rem;
+}
+.ex-filename::before {
+  content: "";
+  flex: 0 0 auto;
+  width: 9px; height: 9px; border-radius: 50%;
+  background: #ff5f56;
+  box-shadow: 15px 0 0 #ffbd2e, 30px 0 0 #27c93f;
+  margin-right: 2.55rem;
+}
+
+/* ========================================================================
+   Taxonomy table — row hover
+   ======================================================================== */
+.taxonomy-table-wrap { box-shadow: 0 14px 34px -24px rgba(15, 23, 42, 0.26); }
+.taxonomy-table tbody tr { transition: background-color 0.14s ease; }
+.taxonomy-table .risk { font-family: var(--font-display); }
+.taxonomy-table tbody.grp-data tr:hover td:not(.cat) { background: rgba(37, 99, 235, 0.07); }
+.taxonomy-table tbody.grp-sys  tr:hover td:not(.cat) { background: rgba(217, 119, 6, 0.09); }
+.taxonomy-table tbody.grp-auto tr:hover td:not(.cat) { background: rgba(5, 150, 105, 0.09); }
+
+/* ========================================================================
+   Pipeline stages — stronger numerals + hover
+   ======================================================================== */
+.pipeline-stage {
+  padding: 1.1rem 1.15rem;
+  border: 1px solid var(--skillharm-border);
+  border-radius: 10px;
+  background: #fff;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+}
+.pipeline-stage:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 16px 34px -22px rgba(15, 23, 42, 0.3);
+  border-color: #d6dae0;
+}
+.pipeline-stage .stage-num {
+  width: 2rem; height: 2rem;
+  font-family: var(--font-mono);
+  font-size: 0.9rem;
+  background: var(--sh-surface-dark);
+  box-shadow: 0 0 0 4px rgba(11, 17, 32, 0.06);
+}
+.pipeline-stage .stage-title { font-size: 1rem; }
+
+/* ========================================================================
+   Benchmark statistics — big mono numerals + accent
+   ======================================================================== */
+.bench-stats { gap: clamp(1.5rem, 6vw, 4rem); }
+.bstat {
+  position: relative;
+  padding: 0.4rem 0.4rem 0.6rem;
+}
+.bstat .bn {
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: clamp(2.4rem, 6vw, 3.1rem);
+  letter-spacing: -0.02em;
+  color: var(--skillharm-ink);
+}
+.bstat .bl {
+  font-family: var(--font-mono);
+  font-size: 0.72rem; letter-spacing: 0.05em; text-transform: uppercase;
+  color: var(--skillharm-muted);
+}
+.bstat::after {
+  content: "";
+  display: block;
+  width: 26px; height: 2px;
+  margin: 0.55rem auto 0;
+  background: var(--skillharm-accent);
+  opacity: 0.55;
+}
+
+/* ========================================================================
+   Comparison table — row hover, mono numerals
+   ======================================================================== */
+.compare-wrap { box-shadow: 0 14px 34px -24px rgba(15, 23, 42, 0.26); }
+.compare-table td:not(.name) { font-family: var(--font-mono); }
+.compare-table td.name { font-family: var(--font-display); }
+.compare-table tbody tr:not(.ours) { transition: background-color 0.14s ease; }
+.compare-table tbody tr:not(.ours):hover td { background: #fafbfc; }
+.ours-tag { font-family: var(--font-mono); }
+
+/* ========================================================================
+   Footer
+   ======================================================================== */
+.footer { padding-top: 3rem; padding-bottom: 3rem; }
+.footer .acknowledgments { font-size: 0.92rem; }

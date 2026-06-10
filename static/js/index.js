@@ -7,7 +7,61 @@ document.addEventListener("DOMContentLoaded", () => {
   initCite();
   initLeaderboard();
   initExamples();
+  initMotion();
 });
+
+// ============================================================
+//  Motion: hero load, scroll reveal, stat count-up
+//  Progressive enhancement — guarded so content is always
+//  visible if JS or IntersectionObserver is unavailable.
+// ============================================================
+function initMotion() {
+  const reduce = window.matchMedia &&
+    window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  if (reduce || !("IntersectionObserver" in window)) return;
+
+  // Enables the CSS animation states only once we know JS is live.
+  document.documentElement.classList.add("js-anim");
+
+  // --- Scroll-reveal below-fold sections ---
+  const targets = document.querySelectorAll("section:not(.hero), footer");
+  targets.forEach((t) => t.classList.add("reveal"));
+
+  const revealObs = new IntersectionObserver((entries, obs) => {
+    entries.forEach((entry) => {
+      if (!entry.isIntersecting) return;
+      entry.target.classList.add("in-view");
+      obs.unobserve(entry.target);
+    });
+  }, { rootMargin: "0px 0px -8% 0px", threshold: 0.08 });
+  targets.forEach((t) => revealObs.observe(t));
+
+  // --- Count-up for benchmark statistics ---
+  const statObs = new IntersectionObserver((entries, obs) => {
+    entries.forEach((entry) => {
+      if (!entry.isIntersecting) return;
+      countUp(entry.target);
+      obs.unobserve(entry.target);
+    });
+  }, { threshold: 0.6 });
+  document.querySelectorAll(".bstat .bn").forEach((n) => statObs.observe(n));
+}
+
+function countUp(node) {
+  const target = parseInt(node.textContent.replace(/[^0-9]/g, ""), 10);
+  if (!Number.isFinite(target)) return;
+  const final = node.textContent;
+  const dur = 1100;
+  const start = performance.now();
+  const step = (now) => {
+    const p = Math.min((now - start) / dur, 1);
+    const eased = 1 - Math.pow(1 - p, 3);
+    node.textContent = Math.round(target * eased).toLocaleString();
+    if (p < 1) requestAnimationFrame(step);
+    else node.textContent = final; // restore exact original string
+  };
+  requestAnimationFrame(step);
+}
 
 // ============================================================
 //  Cite popover (sticky nav)
