@@ -783,6 +783,36 @@ h1, h2, h3, h4, h5 { font-family: var(--font-display); }
 }
 .publication-title .skillharm-mark { letter-spacing: 0; }
 
+/* venue badge directly under the title */
+.publication-venue {
+  display: flex;
+  justify-content: center;
+  margin: -0.6rem 0 1.4rem;
+}
+.publication-venue .venue-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  padding: 0.3rem 0.85rem 0.3rem 0.75rem;
+  border: 1px solid rgba(185, 28, 28, 0.35);
+  border-radius: 999px;
+  background: var(--skillharm-accent-soft);
+  font-family: var(--font-display);
+  font-size: 0.82rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  line-height: 1;
+  color: var(--skillharm-accent);
+  box-shadow: 0 6px 16px -12px rgba(185, 28, 28, 0.6);
+}
+.publication-venue .venue-name { font-weight: 700; }
+.publication-venue .venue-track {
+  font-weight: 500;
+  color: var(--skillharm-muted);
+  padding-left: 0.55rem;
+  border-left: 1px solid rgba(185, 28, 28, 0.35);
+}
+
 /* link bar buttons → refined dossier pills */
 .publication-links .link-block .button {
   border-radius: 9px;
@@ -801,6 +831,7 @@ h1, h2, h3, h4, h5 { font-family: var(--font-display); }
 /* staggered entrance (skipped if reduced motion / no JS guard) */
 @media (prefers-reduced-motion: no-preference) {
   .js-anim .hero .publication-title,
+  .js-anim .hero .publication-venue,
   .js-anim .hero .publication-authors,
   .js-anim .hero .publication-affiliations,
   .js-anim .hero .publication-equal-contrib,
@@ -809,10 +840,11 @@ h1, h2, h3, h4, h5 { font-family: var(--font-display); }
     animation: sh-rise 0.7s cubic-bezier(0.16, 0.84, 0.44, 1) forwards;
   }
   .js-anim .hero .publication-title        { animation-delay: 0.05s; }
-  .js-anim .hero .publication-authors      { animation-delay: 0.18s; }
-  .js-anim .hero .publication-affiliations { animation-delay: 0.28s; }
-  .js-anim .hero .publication-equal-contrib{ animation-delay: 0.34s; }
-  .js-anim .hero .publication-links        { animation-delay: 0.42s; }
+  .js-anim .hero .publication-venue        { animation-delay: 0.14s; }
+  .js-anim .hero .publication-authors      { animation-delay: 0.22s; }
+  .js-anim .hero .publication-affiliations { animation-delay: 0.32s; }
+  .js-anim .hero .publication-equal-contrib{ animation-delay: 0.38s; }
+  .js-anim .hero .publication-links        { animation-delay: 0.46s; }
 }
 @keyframes sh-rise {
   from { opacity: 0; transform: translateY(16px); }
