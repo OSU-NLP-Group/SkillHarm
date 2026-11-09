@@ -1,6 +1,10 @@
 # SkillHarm: Lifecycle-Aware Skill-Based Attacks via Automated Construction
 
 <p align="center">
+  🏆 <strong>EMNLP 2026 Outstanding Paper Award</strong>
+</p>
+
+<p align="center">
 [<a href="https://osu-nlp-group.github.io/SkillHarm/">Website</a>] •
 [<a href="https://arxiv.org/abs/2606.02540">Paper</a>] •
 [<a href="https://huggingface.co/datasets/osunlp/SkillHarm">Data</a>]
@@ -28,6 +32,7 @@ To instantiate these attacks at scale, we build **AutoSkillHarm**, an automated 
 
 ## 🚀 Updates
 
+- **10/27/2026**: 🏆 SkillHarm received an **Outstanding Paper Award at EMNLP 2026**!
 - **06/01/2026**: Paper, benchmark, and code release.
 
 ---
